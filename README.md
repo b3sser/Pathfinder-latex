@@ -1,10 +1,8 @@
 # Pathfinder 2e LaTeX Character Sheet Template
 LaTeX template for typesetting Cyberpunk Character Sheets
 
-#### Currently in development, DO NOT USE YET
-
 ## Features
-- 3-page Character Sheet
+- 4-page Character Sheet
 - Automatic calculation of Modifiers, Proficience and other Derived Stats
 - Player input via custom commands for a clean and compact tex file
 - Example character to illustrate usage
