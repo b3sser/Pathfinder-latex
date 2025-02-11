@@ -1,0 +1,123 @@
+% % %  TOP LEFT  % % %
+\newcommand{\AliasesValue}{}
+\newcommand{\ImprovementPointsNow}{}
+\newcommand{\ImprovementPointsMax}{}
+\newcommand{\ReputationValue}{}
+\newcommand{\RepEventsValue}{}
+
+\newcommand{\Aliases}[1]{\renewcommand{\AliasesValue}{#1}}
+\newcommand{\ImprovementPoints}[2]{ \renewcommand{\ImprovementPointsNow}{#1}
+                                    \renewcommand{\ImprovementPointsMax}{#2}}
+\newcommand{\Reputation}[1]{\renewcommand{\ReputationValue}{#1}}
+\newcommand{\RepEvents}[1]{\renewcommand{\RepEventsValue}{#1}}
+
+% % %  LIFEPATH  % % %
+
+\newcommand{\CulturalOriginsValue}{}
+\newcommand{\PersonalityValue}{}
+\newcommand{\ClothingStyleValue}{}
+\newcommand{\HairstyleValue}{}
+\newcommand{\MostValuedValue}{}
+\newcommand{\AboutPeopleValue}{}
+\newcommand{\MostValuedPersonValue}{}
+\newcommand{\MostValuedPosessionValue}{}
+\newcommand{\FamilyBackgroundValue}{}
+\newcommand{\ChildhoodEnvironmentValue}{}
+\newcommand{\FamilyCrisisValue}{}
+\newcommand{\LifeGoalsValue}{}
+
+\newcommand{\CulturalOrigins}[1]{\renewcommand{\CulturalOriginsValue}{#1}}
+\newcommand{\Personality}[1]{\renewcommand{\PersonalityValue}{#1}}
+\newcommand{\ClothingStyle}[1]{\renewcommand{\ClothingStyleValue}{#1}}
+\newcommand{\Hairstyle}[1]{\renewcommand{\HairstyleValue}{#1}}
+\newcommand{\MostValued}[1]{\renewcommand{\MostValuedValue}{#1}}
+\newcommand{\AboutPeople}[1]{\renewcommand{\AboutPeopleValue}{#1}}
+\newcommand{\MostValuedPerson}[1]{\renewcommand{\MostValuedPersonValue}{#1}}
+\newcommand{\MostValuedPosession}[1]{\renewcommand{\MostValuedPosessionValue}{#1}}
+\newcommand{\FamilyBackground}[1]{\renewcommand{\FamilyBackgroundValue}{#1}}
+\newcommand{\ChildhoodEnvironment}[1]{\renewcommand{\ChildhoodEnvironmentValue}{#1}}
+\newcommand{\FamilyCrisis}[1]{\renewcommand{\FamilyCrisisValue}{#1}}
+\newcommand{\LifeGoals}[1]{\renewcommand{\LifeGoalsValue}{#1}}
+
+
+% % % PEOPLE % % %
+%  Friends  %
+\newcommand{\FriendAValue}{}
+\newcommand{\FriendBValue}{}
+\newcommand{\FriendCValue}{}
+
+\newcommand{\FriendA}[1]{\renewcommand{\FriendAValue}{#1}}
+\newcommand{\FriendB}[1]{\renewcommand{\FriendBValue}{#1}}
+\newcommand{\FriendC}[1]{\renewcommand{\FriendCValue}{#1}}
+
+%  Tragic Love Affairs  %
+\newcommand{\LoveAValue}{}
+\newcommand{\LoveBValue}{}
+\newcommand{\LoveCValue}{}
+
+\newcommand{\LoveA}[1]{\renewcommand{\LoveAValue}{#1}}
+\newcommand{\LoveB}[1]{\renewcommand{\LoveBValue}{#1}}
+\newcommand{\LoveC}[1]{\renewcommand{\LoveCValue}{#1}}
+
+%  Enemies  %
+\newcommand{\EnemyATable}{}
+\newcommand{\EnemyA}[4]{
+  \renewcommand{\EnemyATable}
+  {
+    \begin{tabular}{p{45pt}p{52pt}p{77pt}p{65pt}}
+      \scriptsize #1 & \scriptsize #2 & \scriptsize #3 & \scriptsize #4 \\
+    \end{tabular}
+  }
+}
+
+\newcommand{\EnemyBTable}{}
+\newcommand{\EnemyB}[4]{
+  \renewcommand{\EnemyBTable}
+  {
+    \begin{tabular}{p{45pt}p{52pt}p{77pt}p{65pt}}
+      \scriptsize #1 & \scriptsize #2 & \scriptsize #3 & \scriptsize #4 \\
+    \end{tabular}
+  }
+}
+
+\newcommand{\EnemyCTable}{}
+\newcommand{\EnemyC}[4]{
+  \renewcommand{\EnemyCTable}
+  {
+    \begin{tabular}{p{45pt}p{52pt}p{77pt}p{65pt}}
+      \scriptsize #1 & \scriptsize #2 & \scriptsize #3 & \scriptsize #4 \\
+    \end{tabular}
+  }
+}
+
+
+% % %  GEAR  % % %
+\newcommand\GearTable{}
+
+\makeatletter
+\newcommand\AddGear[2]{%
+  \g@addto@macro\GearTable{\footnotesize #1 & \footnotesize #2 \\}
+}
+\makeatother
+
+\newcommand{\AmmunitionValue}{}
+\newcommand{\Ammunition}[1]{\renewcommand{\AmmunitionValue}{#1}}
+
+\newcommand{\CashValue}{}
+\newcommand{\Cash}[1]{\renewcommand{\CashValue}{#1}}
+
+
+% % %  BOTTOM RIGHT  % % %
+\newcommand{\FashionValue}{}
+\newcommand{\Fashion}[1]{\renewcommand{\FashionValue}{#1}}
+
+\newcommand{\HousingValue}{}
+\newcommand{\RentValue}{}
+\newcommand{\LifestyleValue}{}
+
+\newcommand{\Housing}[1]{\renewcommand{\HousingValue}{#1}}
+\newcommand{\Rent}[1]{\renewcommand{\RentValue}{#1}}
+\newcommand{\Lifestyle}[1]{\renewcommand{\LifestyleValue}{#1}}
+
+\newcommand{\RoleSpecificLifepathValue}{}
+\newcommand{\RoleSpecificLifepath}[1]{\renewcommand{\RoleSpecificLifepathValue}{#1}}

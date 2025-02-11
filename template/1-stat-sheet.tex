@@ -1,0 +1,14 @@
+\begin{pspicture}(\paperwidth,\paperheight)
+
+    % Set background
+    \begin{tikzpicture}[remember picture,overlay]
+        \node[inner sep=0pt] at (current page.center)
+        {\includegraphics[page=1,width=\paperwidth,height=\paperheight]{img/backgrounds.pdf}};
+    \end{tikzpicture}
+
+    % Import parts of sheet
+    \input{template/1-stat-sheet/1-left.tex}
+    \input{template/1-stat-sheet/1-weapons-armor.tex}
+    \input{template/1-stat-sheet/1-skills.tex}
+
+\end{pspicture}

@@ -1,0 +1,63 @@
+\ExplSyntaxOn
+
+\ProvidesPackage{pf2e}
+
+% Load Required Packages
+\input {lib/pf2e-requi.def}
+
+% Set page geometry
+\geometry{
+    top         = 0cm,
+    bottom      = 0cm,
+    left        = -0.6cm,
+    right       = 0cm,
+    footskip    = 8mm, % Bottom of text area to bottom of footer text
+    columnsep   = 8mm, % Space between columns
+}
+
+% Set paragraph and line spacing
+\setlength {\parindent} {1em}
+\linespread {0.8}
+
+% Set column and row seperators
+% for tblr (provided by tabularray package)
+\SetTblrInner{rowsep=1.67pt, colsep=3pt}
+% for normal tabular
+\setlength{\tabcolsep}{3pt}
+
+% Restrict hyphenation
+\tolerance        = 1
+\emergencystretch = \maxdimen
+\hyphenpenalty    = 10000
+\hbadness         = 10000
+
+%\RaggedRight
+
+% Set Font
+\setmainfont[
+    Path=lib/fonts/exo/,
+    Ligatures=TeX,
+    UprightFont = *-Regular,
+    ItalicFont = *-Italic,
+    BoldFont = *-Bold,
+    BoldItalicFont = *-BoldItalic
+]{Exo}
+
+% PSTricks settings
+\psset{xunit=1pt,yunit=1pt,runit=1pt}
+
+% Customize itemize environment.
+\setlist{leftmargin=1em}
+\setitemize{noitemsep,topsep=0.5ex,label=\footnotesize{$\bullet$}}
+
+% Load Command definitions and stats calculations
+\input{template/1-stat-sheet/commands-1.tex}
+\input{template/2-feat-sheet/commands-2.tex}
+\input{template/3-personality-sheet/commands-3.tex}
+\input{template/4-spell-sheet/commands-4.tex}
+
+% Rendering Commands
+\newcommand{\renderstatsheet}{\input{template/1-stat-sheet.tex}}
+\newcommand{\renderlifesheet}{\input{template/2-feat-sheet.tex}}
+\newcommand{\rendercybersheet}{\input{template/3-personality-sheet.tex}}
+\newcommand{\rendercybersheet}{\input{template/4-spell-sheet.tex}}

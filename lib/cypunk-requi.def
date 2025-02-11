@@ -1,0 +1,29 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Package Dependencies
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Helps prevent option clash with other packages that include xcolor
+\PassOptionsToPackage {table} {xcolor}
+
+%\RequirePackage {textcomp,gensymb} % degree symbol for italian ordinals
+%\RequirePackage [autolanguage] {numprint}  % localization of thousands separator
+%\RequirePackage {xparse}   % \NewDocumentCommand and expl3
+
+\RequirePackage {tikz}      % For sheet backgrounds
+\RequirePackage {geometry}
+\RequirePackage {fontspec}
+
+\RequirePackage {enumitem}
+\RequirePackage {xcolor}
+\RequirePackage {microtype} % Improve ragged2e hyphenation and overfull boxes
+\RequirePackage {ragged2e}
+
+\RequirePackage{pstricks}
+\RequirePackage{tabularray}
+
+\RequirePackage{ifthen}
+\RequirePackage{etoolbox}   % For ifstrempty and bools
+
+\RequirePackage[nomessages]{fp} % For stat calculation
+
+

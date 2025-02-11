@@ -1,0 +1,12 @@
+\begin{pspicture}(\paperwidth,\paperheight)
+
+    % Set background
+    \begin{tikzpicture}[remember picture,overlay]
+        \node[inner sep=0pt] at (current page.center)
+        {\includegraphics[page=3,width=\paperwidth,height=\paperheight]{img/backgrounds.pdf}};
+    \end{tikzpicture}
+
+    % Import parts of sheet
+    \input{template/3-cyber-sheet/3-allthetables.tex}
+
+\end{pspicture}
