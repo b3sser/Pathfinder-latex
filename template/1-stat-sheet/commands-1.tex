@@ -1,6 +1,6 @@
 % % % TEML SWITCH % % %
 \newcommand{\TEMLswitchValue}{0}                        
-\newcommand{\TEMLswitch}{
+\newcommand{\TEMLswitch}[1]{
     \ifstrequal{#1}{T}{\renewcommand{\TEMLswitchValue}{2}}{}
     \ifstrequal{#1}{E}{\renewcommand{\TEMLswitchValue}{4}}{}
     \ifstrequal{#1}{M}{\renewcommand{\TEMLswitchValue}{6}}{}
@@ -22,7 +22,7 @@
 \newcommand{\TraitsValue}{}
 \newcommand{\DeityValue}{}
 \newcommand{\LevelValue}{1}
-\newcommand{\HeroPoints}{}
+\newcommand{\HeroPointsValue}{}
 
 \newcommand{\Name}[1]{\renewcommand{\NameValue}{#1}}
 \newcommand{\Player}[1]{\renewcommand{\PlayerValue}{#1}}
@@ -113,10 +113,10 @@
 \newcommand{\mediumTEML}{0}
 \newcommand{\heavyTEML}{0}
 
-\newcommand{\unarmored}{\ifstrempty{#1}{}{\TEMLswitch{#1}\renewcommand{\unarmoredTEML}{\TEMLswitchValue}}}
-\newcommand{\light}{\ifstrempty{#1}{}{\TEMLswitch{#1}\renewcommand{\lightTEML}{\TEMLswitchValue}}}
-\newcommand{\medium}{\ifstrempty{#1}{}{\TEMLswitch{#1}\renewcommand{\mediumTEML}{\TEMLswitchValue}}}
-\newcommand{\heavy}{\ifstrempty{#1}{}{\TEMLswitch{#1}\renewcommand{\heavyTEML}{\TEMLswitchValue}}}
+\newcommand{\unarmored}[1]{\ifstrempty{#1}{}{\TEMLswitch{#1}\renewcommand{\unarmoredTEML}{\TEMLswitchValue}}}
+\newcommand{\light}[1]{\ifstrempty{#1}{}{\TEMLswitch{#1}\renewcommand{\lightTEML}{\TEMLswitchValue}}}
+\newcommand{\medium}[1]{\ifstrempty{#1}{}{\TEMLswitch{#1}\renewcommand{\mediumTEML}{\TEMLswitchValue}}}
+\newcommand{\heavy}[1]{\ifstrempty{#1}{}{\TEMLswitch{#1}\renewcommand{\heavyTEML}{\TEMLswitchValue}}}
 
 \newcommand{\ShieldPlus}{}
 \newcommand{\ShieldHardness}{}
@@ -165,27 +165,27 @@
 \newcommand{\Willtotal}{\fpeval{10 + \WISMod + \Willprof + \Willitem}}
 
 \newcommand{\SavingThrowNotesValue}{}
-\newcommand{\SavingThrowNotes}{\ifstrempty{#1}{}{\renewcommand{\SavingThrowNotesValue}{#1}}}
+\newcommand{\SavingThrowNotes}[1]{\ifstrempty{#1}{}{\renewcommand{\SavingThrowNotesValue}{#1}}}
 
 
 % % % HIT POINTS % % %
-\newcommand{\HPMaxValue{}}{0}
-\newcommand{\HPCurrentValue{}}{}
-\newcommand{\HPTemporaryValue{}}{}
-\newcommand{\HPDyingValue{}}{}
-\newcommand{\HPWoundedValue{}}{}
+\newcommand{\HPMaxValue}{0}
+\newcommand{\HPCurrentValue}{}
+\newcommand{\HPTemporaryValue}{}
+\newcommand{\HPDyingValue}{}
+\newcommand{\HPWoundedValue}{}
 
-\newcommand{\ResisImmuneValue{}}{}
-\newcommand{\ConditionsValue{}}{}
+\newcommand{\ResisImmuneValue}{}
+\newcommand{\ConditionsValue}{}
 
-\newcommand{\HPMax{}}{\ifstrempty{#1}{}{\renewcommand{\HPMaxValue}{#1}}}
-\newcommand{\HPCurrent{}}{\ifstrempty{#1}{}{\renewcommand{\HPCurrentValue}{#1}}}
-\newcommand{\HPTemporary{}}{\ifstrempty{#1}{}{\renewcommand{\HPTemporaryValue}{#1}}}
-\newcommand{\HPDying{}}{\ifstrempty{#1}{}{\renewcommand{\HPDyingValue}{#1}}}
-\newcommand{\HPWounded{}}{\ifstrempty{#1}{}{\renewcommand{\HPWoundedValue}{#1}}}
+\newcommand{\HPMax}[1]{\ifstrempty{#1}{}{\renewcommand{\HPMaxValue}{#1}}}
+\newcommand{\HPCurrent}[1]{\ifstrempty{#1}{}{\renewcommand{\HPCurrentValue}{#1}}}
+\newcommand{\HPTemporary}[1]{\ifstrempty{#1}{}{\renewcommand{\HPTemporaryValue}{#1}}}
+\newcommand{\HPDying}[1]{\ifstrempty{#1}{}{\renewcommand{\HPDyingValue}{#1}}}
+\newcommand{\HPWounded}[1]{\ifstrempty{#1}{}{\renewcommand{\HPWoundedValue}{#1}}}
 
-\newcommand{\ResisImmune{}}{\ifstrempty{#1}{}{\renewcommand{\ResisImmuneValue}{#1}}}
-\newcommand{\Conditions{}}{\ifstrempty{#1}{}{\renewcommand{\ConditionsValue}{#1}}}
+\newcommand{\ResisImmune}[1]{\ifstrempty{#1}{}{\renewcommand{\ResisImmuneValue}{#1}}}
+\newcommand{\Conditions}[1]{\ifstrempty{#1}{}{\renewcommand{\ConditionsValue}{#1}}}
 
 
 % % % PERCEPTON % % %
@@ -199,16 +199,16 @@
 \newcommand{\Perceptionprof}{\ifstrequal{\PerceptionTEML}{0}{0}{\fpeval{\LevelValue + \PerceptionTEML}}}
 \newcommand{\Perceptiontotal}{\fpeval{\WISMod + \Perceptionprof + \Perceptionitem}}
 
-\newcommand{\SensesValue{}}{}
-\newcommand{\Senses{}}{\ifstrempty{#1}{}{\renewcommand{\SensesValue}{#1}}}
+\newcommand{\SensesValue}{}
+\newcommand{\Senses}[1]{\ifstrempty{#1}{}{\renewcommand{\SensesValue}{#1}}}
 
 
 % % % SPEED % % %
-\newcommand{\SpeedFeetValue{}}{}
-\newcommand{\SpeedFeet{}}{\ifstrempty{#1}{}{\renewcommand{\SpeedFeetValue}{#1}}}
+\newcommand{\SpeedFeetValue}{}
+\newcommand{\SpeedFeet}[1]{\ifstrempty{#1}{}{\renewcommand{\SpeedFeetValue}{#1}}}
 
-\newcommand{\MovementTypesNotesValue{}}{}
-\newcommand{\MovementTypesNotes{}}{\ifstrempty{#1}{}{\renewcommand{\MovementTypesNotesValue}{#1}}}
+\newcommand{\MovementTypesNotesValue}{}
+\newcommand{\MovementTypesNotes}[1]{\ifstrempty{#1}{}{\renewcommand{\MovementTypesNotesValue}{#1}}}
 
 
 % % % SKILLS % % %
@@ -286,29 +286,29 @@
 \newcommand{\Intimidationprof}{\ifstrequal{\IntimidationTEML}{0}{0}{\fpeval{\LevelValue + \IntimidationTEML}}}
 \newcommand{\Intimidationtotal}{\fpeval{\CHAMod + \Intimidationprof + \Intimidationitem}}
 
-\newcommand{\Lore1TEML}{0}
-\newcommand{\Lore1item}{0}
-\newcommand{\Lore1name}{}
-\newcommand{\Lore1}[3]{   \TEMLswitch{#1}
-                            \renewcommand{\Lore1TEML}{\TEMLswitchValue}
-                        \ifstrempty{#2}{}{\renewcommand{\Lore1item}{#2}}
-                        \ifstrempty{#3}{}{\renewcommand{\Lore1name}{#3}}
+\newcommand{\LoreATEML}{0}
+\newcommand{\LoreAitem}{0}
+\newcommand{\LoreAname}{}
+\newcommand{\LoreA}[3]{   \TEMLswitch{#1}
+                            \renewcommand{\LoreATEML}{\TEMLswitchValue}
+                        \ifstrempty{#2}{}{\renewcommand{\LoreAitem}{#2}}
+                        \ifstrempty{#3}{}{\renewcommand{\LoreAname}{#3}}
                         }
 
-\newcommand{\Lore1prof}{\ifstrequal{\Lore1TEML}{0}{0}{\fpeval{\LevelValue + \Lore1TEML}}}
-\newcommand{\Lore1total}{\fpeval{\INTMod + \Lore1prof + \Lore1item}}
+\newcommand{\LoreAprof}{\ifstrequal{\LoreATEML}{0}{0}{\fpeval{\LevelValue + \LoreATEML}}}
+\newcommand{\LoreAtotal}{\fpeval{\INTMod + \LoreAprof + \LoreAitem}}
 
-\newcommand{\Lore2TEML}{0}
-\newcommand{\Lore2item}{0}
-\newcommand{\Lore2name}{}
-\newcommand{\Lore2}[3]{   \TEMLswitch{#1}
-                            \renewcommand{\Lore2TEML}{\TEMLswitchValue}
-                        \ifstrempty{#2}{}{\renewcommand{\Lore2item}{#2}}
-                        \ifstrempty{#3}{}{\renewcommand{\Lore2name}{#3}}
+\newcommand{\LoreBTEML}{0}
+\newcommand{\LoreBitem}{0}
+\newcommand{\LoreBname}{}
+\newcommand{\LoreB}[3]{   \TEMLswitch{#1}
+                            \renewcommand{\LoreBTEML}{\TEMLswitchValue}
+                        \ifstrempty{#2}{}{\renewcommand{\LoreBitem}{#2}}
+                        \ifstrempty{#3}{}{\renewcommand{\LoreBname}{#3}}
                         }
 
-\newcommand{\Lore2prof}{\ifstrequal{\Lore2TEML}{0}{0}{\fpeval{\LevelValue + \Lore2TEML}}}
-\newcommand{\Lore2total}{\fpeval{\INTMod + \Lore2prof + \Lore2item}}
+\newcommand{\LoreBprof}{\ifstrequal{\LoreBTEML}{0}{0}{\fpeval{\LevelValue + \LoreBTEML}}}
+\newcommand{\LoreBtotal}{\fpeval{\INTMod + \LoreBprof + \LoreBitem}}
 
 \newcommand{\MedicineTEML}{0}
 \newcommand{\Medicineitem}{0}
@@ -404,31 +404,31 @@
 \newcommand{\Thieveryprof}{\ifstrequal{\ThieveryTEML}{0}{0}{\fpeval{\LevelValue + \ThieveryTEML}}}
 \newcommand{\Thieverytotal}{\fpeval{\DEXMod + \Thieveryprof + \Thieveryitem - \Thieveryarmor}}
 
-\newcommand{\LanguagesValue{}}{}
-\newcommand{\Languages{}}{\ifstrempty{#1}{}{\renewcommand{\LanguagesValue}{#1}}}
+\newcommand{\LanguagesValue}{}
+\newcommand{\Languages}[1]{\ifstrempty{#1}{}{\renewcommand{\LanguagesValue}{#1}}}
 
 
 % % % WEAPONS % % %
-\newcommand{\MW1name}{}
-\newcommand{\MW1TEML}{0}
-\newcommand{\MW1item}{0}
-\newcommand{\MW1dice}{}
-\newcommand{\MW1BPS}{}
-\newcommand{\MW1WSpec}{}
-\newcommand{\MW1Other}{}
-\newcommand{\MW1Traits}{}
+\newcommand{\MWAname}{}
+\newcommand{\MWATEML}{0}
+\newcommand{\MWAitem}{0}
+\newcommand{\MWAdice}{}
+\newcommand{\MWABPS}{}
+\newcommand{\MWAWSpec}{}
+\newcommand{\MWAOther}{}
+\newcommand{\MWATraits}{}
 
-\newcommand{\MWeapon1}[8]{   
-    \renewcommand{\MW1name}{#1} 
+\newcommand{\MWeaponOne}[8]{   
+    \renewcommand{\MWAname}{#1} 
     \TEMLswitch{#2}
-    \renewcommand{\MW1TEML}{\TEMLswitchValue}
-    \ifstrempty{#3}{}{\renewcommand{\MW1item}{#3}}
-    \renewcommand{\MW1dice}{#4}
-    \renewcommand{\MW1BPS}{#5}
-    \renewcommand{\MW1WSpec}{#6}
-    \renewcommand{\MW1Other}{#7}
-    \renewcommand{\MW1Traits}{#8}
+    \renewcommand{\MWATEML}{\TEMLswitchValue}
+    \ifstrempty{#3}{}{\renewcommand{\MWAitem}{#3}}
+    \renewcommand{\MWAdice}{#4}
+    \renewcommand{\MWABPS}{#5}
+    \renewcommand{\MWAWSpec}{#6}
+    \renewcommand{\MWAOther}{#7}
+    \renewcommand{\MWATraits}{#8}
 }
 
-\newcommand{\MW1prof}{\ifstrequal{\MW1TEML}{0}{0}{\fpeval{\LevelValue + \MW1TEML}}}
-\newcommand{\MW1strike}{\fpeval{\STRMod + \MW1prof + \MW1item}}
+\newcommand{\MWAprof}{\ifstrequal{\MWATEML}{0}{0}{\fpeval{\LevelValue + \MWATEML}}}
+\newcommand{\MWAstrike}{\fpeval{\STRMod + \MWAprof + \MWAitem}}
