@@ -51,7 +51,7 @@
 \setitemize{noitemsep,topsep=0.5ex,label=\footnotesize{$\bullet$}}
 
 \newcommand{\bgcolbw}{img/backgrounds_col.pdf}
-\newcommand{\printerfriendly}{\ifstrequal{#1}{true}{
+\newcommand{\printerfriendly}[1]{\ifstrequal{#1}{true}{
     \renewcommand{\bgcolbw}{img/backgrounds_bw.pdf}}{
     \renewcommand{\bgcolbw}{img/backgrounds_col.pdf}}
 }
