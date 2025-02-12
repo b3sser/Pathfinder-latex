@@ -19,6 +19,7 @@
 \newcommand{\ClassValue}{}
 \newcommand{\SizeValue}{M}
 \newcommand{\AlignmentValue}{NN}
+\newcommand{\AlignmentLong}{\AlignmentValue}
 \newcommand{\TraitsValue}{}
 \newcommand{\DeityValue}{}
 \newcommand{\LevelValue}{1}
@@ -32,12 +33,23 @@
 \newcommand{\Background}[1]{\renewcommand{\BackgroundValue}{#1}}
 \newcommand{\Class}[1]{\renewcommand{\ClassValue}{#1}}
 \newcommand{\Size}[1]{\renewcommand{\SizeValue}{#1}}
-\newcommand{\Alignment}[1]{\renewcommand{\AlignmentValue}{#1}}
+\newcommand{\Alignment}[1]{\ifstrempty{#1}{}{\renewcommand{\AlignmentValue}{#1}
+        \ifstrequal{#1}{LG}{\renewcommand{\AlignmentLong}{Lawful\ Good}}
+    {\ifstrequal{#1}{NG}{\renewcommand{\AlignmentLong}{Neutral\ Good}}
+    {\ifstrequal{#1}{CG}{\renewcommand{\AlignmentLong}{Chaotic\ Good}}
+    {\ifstrequal{#1}{LN}{\renewcommand{\AlignmentLong}{Lawful\ Neutral}}
+    {\ifstrequal{#1}{NN}{\renewcommand{\AlignmentLong}{True\ Neutral}}
+    {\ifstrequal{#1}{CN}{\renewcommand{\AlignmentLong}{Chaotic\ Neutral}}
+    {\ifstrequal{#1}{LE}{\renewcommand{\AlignmentLong}{Lawful\ Evil}}
+    {\ifstrequal{#1}{NE}{\renewcommand{\AlignmentLong}{Neutral\ Evil}}
+    {\ifstrequal{#1}{CE}{\renewcommand{\AlignmentLong}{Chaotic\ Evil}}
+    {error2}}}}}}}}}
+}}
+
 \newcommand{\Traits}[1]{\renewcommand{\TraitsValue}{#1}}
 \newcommand{\Deity}[1]{\renewcommand{\DeityValue}{#1}}
 \newcommand{\Level}[1]{\ifstrempty{#1}{}{\renewcommand{\LevelValue}{#1}}}
 \newcommand{\HeroPoints}[1]{\renewcommand{\HeroPointsValue}{#1}}
-
 
 % % %  STATS  % % %
 \newcommand{\STRValue}{10}
