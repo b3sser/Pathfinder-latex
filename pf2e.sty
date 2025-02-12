@@ -50,14 +50,20 @@
 \setlist{leftmargin=1em}
 \setitemize{noitemsep,topsep=0.5ex,label=\footnotesize{$\bullet$}}
 
+\newcommand{\bgcolbw}{img/backgrounds_col.pdf}
+\newcommand{\printerfriendly}{\ifstrequal{#1}{true}{
+    \renewcommand{\bgcolbw}{img/backgrounds_bw.pdf}}{
+    \renewcommand{\bgcolbw}{img/backgrounds_col.pdf}}
+}
+
 % Load Command definitions and stats calculations
 \input{template/1-stat-sheet/commands-1.tex}
-\input{template/2-feat-sheet/commands-2.tex}
-\input{template/3-personality-sheet/commands-3.tex}
-\input{template/4-spell-sheet/commands-4.tex}
+%\input{template/2-feat-sheet/commands-2.tex}
+%\input{template/3-personality-sheet/commands-3.tex}
+%\input{template/4-spell-sheet/commands-4.tex}
 
 % Rendering Commands
 \newcommand{\renderstatsheet}{\input{template/1-stat-sheet.tex}}
-\newcommand{\renderfeatsheet}{\input{template/2-feat-sheet.tex}}
-\newcommand{\renderpersonalitysheet}{\input{template/3-personality-sheet.tex}}
-\newcommand{\renderspellsheet}{\input{template/4-spell-sheet.tex}}
+%\newcommand{\renderfeatsheet}{\input{template/2-feat-sheet.tex}}
+%\newcommand{\renderpersonalitysheet}{\input{template/3-personality-sheet.tex}}
+%\newcommand{\renderspellsheet}{\input{template/4-spell-sheet.tex}}
