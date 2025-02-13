@@ -49,7 +49,7 @@
 \newcommand{\Level}[1]{\ifstrempty{#1}{}{\renewcommand{\LevelValue}{#1}}}
 \newcommand{\HeroPoints}[1]{\renewcommand{\HeroPointsValue}{#1}}
 
-% % %  STATS  % % %
+% % %  ABILITIES  % % %
 \newcommand{\STRValue}{10}
 \newcommand{\DEXValue}{10}
 \newcommand{\CONValue}{10}
@@ -77,14 +77,21 @@
 
 % % % CLASS DC % % %
 \newcommand{\KeyAbilityValue}{}
+\newcommand{\KeyAbilityName}{}
 \newcommand{\KeyAbilityMod}{0}
 \newcommand{\KeyAbility}[1]{\renewcommand{\KeyAbilityValue}{#1}
-                            \ifstrequal{#1}{Str}{\renewcommand{\KeyAbilityMod}{\STRmod}}{}
-                            \ifstrequal{#1}{Dex}{\renewcommand{\KeyAbilityMod}{\DEXmod}}{}
-                            \ifstrequal{#1}{Con}{\renewcommand{\KeyAbilityMod}{\CONmod}}{}
-                            \ifstrequal{#1}{Int}{\renewcommand{\KeyAbilityMod}{\INTmod}}{}
-                            \ifstrequal{#1}{Wis}{\renewcommand{\KeyAbilityMod}{\WISmod}}{}
-                            \ifstrequal{#1}{Cha}{\renewcommand{\KeyAbilityMod}{\CHAmod}}{}
+                            \ifstrequal{#1}{Str}{\renewcommand{\KeyAbilityMod}{\STRmod}
+                                                 \renewcommand{\KeyAbilityName}{Strength}}{}
+                            \ifstrequal{#1}{Dex}{\renewcommand{\KeyAbilityMod}{\DEXmod}
+                                                 \renewcommand{\KeyAbilityName}{Dexterity}}{}
+                            \ifstrequal{#1}{Con}{\renewcommand{\KeyAbilityMod}{\CONmod}
+                                                 \renewcommand{\KeyAbilityName}{Constitution}}{}
+                            \ifstrequal{#1}{Int}{\renewcommand{\KeyAbilityMod}{\INTmod}
+                                                 \renewcommand{\KeyAbilityName}{Intelligence}}{}
+                            \ifstrequal{#1}{Wis}{\renewcommand{\KeyAbilityMod}{\WISmod}
+                                                 \renewcommand{\KeyAbilityName}{Wisdom}}{}
+                            \ifstrequal{#1}{Cha}{\renewcommand{\KeyAbilityMod}{\CHAmod}
+                                                 \renewcommand{\KeyAbilityName}{Charisma}}{}
                             }
 
 \newcommand{\ClassDCTEML}{0}
