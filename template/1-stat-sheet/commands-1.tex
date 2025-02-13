@@ -96,25 +96,26 @@
 
 \newcommand{\ClassDCTEML}{0}
 \newcommand{\ClassDCitem}{0}
+\newcommand{\ClassDCprof}{0}
 \newcommand{\ClassDC}[2]{\TEMLswitch{#1}{\ClassDCTEML}
+                        \ifstrempty{#1}{\renewcommand{\ClassDCprof}{0}}{\renewcommand{\ClassDCprof}{\fpeval{\LevelValue + \ClassDCTEML}}}
                         \ifstrempty{#2}{}{\renewcommand{\ClassDCitem}{#2}}
                         }
 
-\newcommand{\ClassDCprof}{\ifstrequal{0}{\ClassDCTEML}{0}{\fpeval{\LevelValue + \ClassDCTEML}}}
 \newcommand{\ClassDCtotal}{\fpeval{10 + \KeyAbilityMod + \ClassDCprof + \ClassDCitem}}
 
 % % % ARMOR CLASS % % %
 \newcommand{\ACcap}{}
 \newcommand{\ACTEML}{0}
+\newcommand{\ACprof}{0}
 \newcommand{\ACitem}{0}
 
 \newcommand{\AC}[3]{
     \ifstrempty{#1}{}{\renewcommand{\ACcap}{#1}}
     \TEMLswitch{#2}{\ACTEML}
+    \ifstrempty{#1}{\renewcommand{\ACprof}{0}}{\renewcommand{\ACprof}{\fpeval{\LevelValue + \ACTEML}}}
     \ifstrempty{#3}{}{\renewcommand{\ACitem}{#3}}
 }
-
-\newcommand{\ACprof}{\ifstrequal{\ACTEML}{0}{0}{\fpeval{\LevelValue + \ACTEML}}}
 
 \newcommand{\ACtotal}{\ifstrempty{\ACcap}{\fpeval{10 + \DEXMod + \ACprof + \ACitem}}
     {\ifnumcomp{\ACcap}{>}{\DEXMod}
@@ -150,30 +151,33 @@
 
 % % % SAVING THROWS % % %
 \newcommand{\FortitudeTEML}{0}
+\newcommand{\Fortitudeprof}{0}
 \newcommand{\Fortitudeitem}{0}
-\newcommand{\Fortitude}[2]{   \TEMLswitch{#1}{\FortitudeTEML}
-                        \ifstrempty{#2}{}{\renewcommand{\Fortitudeitem}{#2}}
-                        }
-
-\newcommand{\Fortitudeprof}{\ifstrequal{\FortitudeTEML}{0}{0}{\fpeval{\LevelValue + \FortitudeTEML}}}
+\newcommand{\Fortitude}[2]{
+    \TEMLswitch{#1}{\FortitudeTEML}
+    \ifstrempty{#1}{\renewcommand{\Fortitudeprof}{0}}{\renewcommand{\Fortitudeprof}{\fpeval{\LevelValue + \FortitudeTEML}}}
+    \ifstrempty{#2}{}{\renewcommand{\Fortitudeitem}{#2}}
+}
 \newcommand{\Fortitudetotal}{\fpeval{10 + \CONMod + \Fortitudeprof + \Fortitudeitem}}
 
 \newcommand{\ReflexTEML}{0}
+\newcommand{\Reflexprof}{0}
 \newcommand{\Reflexitem}{0}
-\newcommand{\Reflex}[2]{   \TEMLswitch{#1}{\ReflexTEML}
-                        \ifstrempty{#2}{}{\renewcommand{\Reflexitem}{#2}}
-                        }
-
-\newcommand{\Reflexprof}{\ifstrequal{\ReflexTEML}{0}{0}{\fpeval{\LevelValue + \ReflexTEML}}}
+\newcommand{\Reflex}[2]{
+    \TEMLswitch{#1}{\ReflexTEML}
+    \ifstrempty{#1}{\renewcommand{\Reflexprof}{0}}{\renewcommand{\Reflexprof}{\fpeval{\LevelValue + \ReflexTEML}}}
+    \ifstrempty{#2}{}{\renewcommand{\Reflexitem}{#2}}
+}
 \newcommand{\Reflextotal}{\fpeval{10 + \DEXMod + \Reflexprof + \Reflexitem}}
 
 \newcommand{\WillTEML}{0}
+\newcommand{\Willprof}{0}
 \newcommand{\Willitem}{0}
-\newcommand{\Will}[2]{   \TEMLswitch{#1}{\WillTEML}
-                        \ifstrempty{#2}{}{\renewcommand{\Willitem}{#2}}
-                        }
-
-\newcommand{\Willprof}{\ifstrequal{\WillTEML}{0}{0}{\fpeval{\LevelValue + \WillTEML}}}
+\newcommand{\Will}[2]{
+    \TEMLswitch{#1}{\WillTEML}
+    \ifstrempty{#1}{\renewcommand{\Willprof}{0}}{\renewcommand{\Willprof}{\fpeval{\LevelValue + \WillTEML}}}
+    \ifstrempty{#2}{}{\renewcommand{\Willitem}{#2}}
+}
 \newcommand{\Willtotal}{\fpeval{10 + \WISMod + \Willprof + \Willitem}}
 
 \newcommand{\SavingThrowNotesValue}{}
@@ -202,12 +206,13 @@
 
 % % % PERCEPTON % % %
 \newcommand{\PerceptionTEML}{0}
+\newcommand{\Perceptionprof}{0}
 \newcommand{\Perceptionitem}{0}
-\newcommand{\Perception}[2]{   \TEMLswitch{#1}{\PerceptionTEML}
-                        \ifstrempty{#2}{}{\renewcommand{\Perceptionitem}{#2}}
-                        }
-
-\newcommand{\Perceptionprof}{\ifstrequal{\PerceptionTEML}{0}{0}{\fpeval{\LevelValue + \PerceptionTEML}}}
+\newcommand{\Perception}[2]{
+    \TEMLswitch{#1}{\PerceptionTEML}
+    \ifstrempty{#1}{\renewcommand{\Perceptionprof}{0}}{\renewcommand{\Perceptionprof}{\fpeval{\LevelValue + \PerceptionTEML}}}
+    \ifstrempty{#2}{}{\renewcommand{\Perceptionitem}{#2}}
+}
 \newcommand{\Perceptiontotal}{\fpeval{\WISMod + \Perceptionprof + \Perceptionitem}}
 
 \newcommand{\SensesValue}{}
@@ -224,177 +229,195 @@
 
 % % % SKILLS % % %
 \newcommand{\AcrobaticsTEML}{0}
+\newcommand{\Acrobaticsprof}{0}
 \newcommand{\Acrobaticsitem}{0}
 \newcommand{\Acrobaticsarmor}{0}
-\newcommand{\Acrobatics}[3]{   \TEMLswitch{#1}{\AcrobaticsTEML}
-                        \ifstrempty{#2}{}{\renewcommand{\Acrobaticsitem}{#2}}
-                        \ifstrempty{#3}{}{\renewcommand{\Acrobaticsarmor}{#3}}
-                        }
-
-\newcommand{\Acrobaticsprof}{\ifstrequal{\AcrobaticsTEML}{0}{0}{\fpeval{\LevelValue + \AcrobaticsTEML}}}
+\newcommand{\Acrobatics}[3]{
+    \TEMLswitch{#1}{\AcrobaticsTEML}
+    \ifstrempty{#1}{\renewcommand{\Acrobaticsprof}{0}}{\renewcommand{\Acrobaticsprof}{\fpeval{\LevelValue + \AcrobaticsTEML}}}
+    \ifstrempty{#2}{}{\renewcommand{\Acrobaticsitem}{#2}}
+    \ifstrempty{#3}{}{\renewcommand{\Acrobaticsarmor}{#3}}
+}
 \newcommand{\Acrobaticstotal}{\fpeval{\DEXMod + \Acrobaticsprof + \Acrobaticsitem - \Acrobaticsarmor}}
 
 \newcommand{\ArcanaTEML}{0}
+\newcommand{\Arcanaprof}{0}
 \newcommand{\Arcanaitem}{0}
-\newcommand{\Arcana}[2]{   \TEMLswitch{#1}{\ArcanaTEML}
-                        \ifstrempty{#2}{}{\renewcommand{\Arcanaitem}{#2}}
-                        }
-
-\newcommand{\Arcanaprof}{\ifstrequal{\ArcanaTEML}{0}{0}{\fpeval{\LevelValue + \ArcanaTEML}}}
+\newcommand{\Arcana}[2]{
+    \TEMLswitch{#1}{\ArcanaTEML}
+    \ifstrempty{#1}{\renewcommand{\Arcanaprof}{0}}{\renewcommand{\ArcanaTEML}{\fpeval{\LevelValue + \ArcanaTEML}}}
+    \ifstrempty{#2}{}{\renewcommand{\Arcanaitem}{#2}}
+}
 \newcommand{\Arcanatotal}{\fpeval{\INTMod + \Arcanaprof + \Arcanaitem}}
 
 \newcommand{\AthleticsTEML}{0}
+\newcommand{\Athleticsprof}{0}
 \newcommand{\Athleticsitem}{0}
 \newcommand{\Athleticsarmor}{0}
-\newcommand{\Athletics}[3]{   \TEMLswitch{#1}{\AthleticsTEML}
-                        \ifstrempty{#2}{}{\renewcommand{\Athleticsitem}{#2}}
-                        \ifstrempty{#3}{}{\renewcommand{\Athleticsarmor}{#3}}
-                        }
-
-\newcommand{\Athleticsprof}{\ifstrequal{\AthleticsTEML}{0}{0}{\fpeval{\LevelValue + \AthleticsTEML}}}
+\newcommand{\Athletics}[3]{
+    \TEMLswitch{#1}{\AthleticsTEML}
+    \ifstrempty{#1}{\renewcommand{\Athleticsprof}{0}}{\renewcommand{\Athleticsprof}{\fpeval{\LevelValue + \AthleticsTEML}}}
+    \ifstrempty{#2}{}{\renewcommand{\Athleticsitem}{#2}}
+    \ifstrempty{#3}{}{\renewcommand{\Athleticsarmor}{#3}}
+}
 \newcommand{\Athleticstotal}{\fpeval{\STRMod + \Athleticsprof + \Athleticsitem - \Athleticsarmor}}
 
 \newcommand{\CraftingTEML}{0}
+\newcommand{\Craftingprof}{0}
 \newcommand{\Craftingitem}{0}
-\newcommand{\Crafting}[2]{   \TEMLswitch{#1}{\CraftingTEML}
-                        \ifstrempty{#2}{}{\renewcommand{\Craftingitem}{#2}}
-                        }
-
-\newcommand{\Craftingprof}{\ifstrequal{\CraftingTEML}{0}{0}{\fpeval{\LevelValue + \CraftingTEML}}}
+\newcommand{\Crafting}[2]{
+    \TEMLswitch{#1}{\CraftingTEML}
+    \ifstrempty{#1}{\renewcommand{\Craftingprof}{0}}{\renewcommand{\Craftingprof}{\fpeval{\LevelValue + \CraftingTEML}}}
+    \ifstrempty{#2}{}{\renewcommand{\Craftingitem}{#2}}
+}
 \newcommand{\Craftingtotal}{\fpeval{\INTMod + \Craftingprof + \Craftingitem}}
 
 \newcommand{\DeceptionTEML}{0}
+\newcommand{\Deceptionprof}{0}
 \newcommand{\Deceptionitem}{0}
-\newcommand{\Deception}[2]{   \TEMLswitch{#1}{\DeceptionTEML}
-                        \ifstrempty{#2}{}{\renewcommand{\Deceptionitem}{#2}}
-                        }
-
-\newcommand{\Deceptionprof}{\ifstrequal{\DeceptionTEML}{0}{0}{\fpeval{\LevelValue + \DeceptionTEML}}}
+\newcommand{\Deception}[2]{
+    \TEMLswitch{#1}{\DeceptionTEML}
+    \ifstrempty{#1}{\renewcommand{\Deceptionprof}{0}}{\renewcommand{\Deceptionprof}{\fpeval{\LevelValue + \DeceptionTEML}}}
+    \ifstrempty{#2}{}{\renewcommand{\Deceptionitem}{#2}}
+}
 \newcommand{\Deceptiontotal}{\fpeval{\CHAMod + \Deceptionprof + \Deceptionitem}}
 
 \newcommand{\DiplomacyTEML}{0}
+\newcommand{\Diplomacyprof}{0}
 \newcommand{\Diplomacyitem}{0}
-\newcommand{\Diplomacy}[2]{   \TEMLswitch{#1}{\DiplomacyTEML}
-                        \ifstrempty{#2}{}{\renewcommand{\Diplomacyitem}{#2}}
-                        }
-
-\newcommand{\Diplomacyprof}{\ifstrequal{\DiplomacyTEML}{0}{0}{\fpeval{\LevelValue + \DiplomacyTEML}}}
+\newcommand{\Diplomacy}[2]{
+    \TEMLswitch{#1}{\DiplomacyTEML}
+    \ifstrempty{#1}{\renewcommand{\Diplomacyprof}{0}}{\renewcommand{\Diplomacyprof}{\fpeval{\LevelValue + \DiplomacyTEML}}}
+    \ifstrempty{#2}{}{\renewcommand{\Diplomacyitem}{#2}}
+}
 \newcommand{\Diplomacytotal}{\fpeval{\CHAMod + \Diplomacyprof + \Diplomacyitem}}
 
 \newcommand{\IntimidationTEML}{0}
+\newcommand{\Intimidationprof}{0}
 \newcommand{\Intimidationitem}{0}
-\newcommand{\Intimidation}[2]{   \TEMLswitch{#1}{\IntimidationTEML}
-                        \ifstrempty{#2}{}{\renewcommand{\Intimidationitem}{#2}}
-                        }
-
-\newcommand{\Intimidationprof}{\ifstrequal{\IntimidationTEML}{0}{0}{\fpeval{\LevelValue + \IntimidationTEML}}}
+\newcommand{\Intimidation}[2]{
+    \TEMLswitch{#1}{\IntimidationTEML}
+    \ifstrempty{#1}{\renewcommand{\Intimidationprof}{0}}{\renewcommand{\Intimidationprof}{\fpeval{\LevelValue + \IntimidationTEML}}}
+    \ifstrempty{#2}{}{\renewcommand{\Intimidationitem}{#2}}
+}
 \newcommand{\Intimidationtotal}{\fpeval{\CHAMod + \Intimidationprof + \Intimidationitem}}
 
 \newcommand{\LoreATEML}{0}
+\newcommand{\LoreAprof}{0}
 \newcommand{\LoreAitem}{0}
 \newcommand{\LoreAname}{}
-\newcommand{\LoreA}[3]{   \TEMLswitch{#1}{\LoreATEML}
-                        \ifstrempty{#2}{}{\renewcommand{\LoreAitem}{#2}}
-                        \ifstrempty{#3}{}{\renewcommand{\LoreAname}{#3}}
-                        }
-
-\newcommand{\LoreAprof}{\ifstrequal{\LoreATEML}{0}{0}{\fpeval{\LevelValue + \LoreATEML}}}
+\newcommand{\LoreA}[3]{
+    \TEMLswitch{#1}{\LoreATEML}
+    \ifstrempty{#1}{\renewcommand{\LoreAprof}{0}}{\renewcommand{\LoreAprof}{\fpeval{\LevelValue + \LoreATEML}}}
+    \ifstrempty{#2}{}{\renewcommand{\LoreAitem}{#2}}
+    \ifstrempty{#3}{}{\renewcommand{\LoreAname}{#3}}
+}
 \newcommand{\LoreAtotal}{\fpeval{\INTMod + \LoreAprof + \LoreAitem}}
 
 \newcommand{\LoreBTEML}{0}
+\newcommand{\LoreBprof}{0}
 \newcommand{\LoreBitem}{0}
 \newcommand{\LoreBname}{}
-\newcommand{\LoreB}[3]{   \TEMLswitch{#1}{\LoreBTEML}
-                        \ifstrempty{#2}{}{\renewcommand{\LoreBitem}{#2}}
-                        \ifstrempty{#3}{}{\renewcommand{\LoreBname}{#3}}
-                        }
-
-\newcommand{\LoreBprof}{\ifstrequal{\LoreBTEML}{0}{0}{\fpeval{\LevelValue + \LoreBTEML}}}
+\newcommand{\LoreB}[3]{
+    \TEMLswitch{#1}{\LoreBTEML}
+    \ifstrempty{#1}{\renewcommand{\LoreBprof}{0}}{\renewcommand{\LoreBprof}{\fpeval{\LevelValue + \LoreBTEML}}}
+    \ifstrempty{#2}{}{\renewcommand{\LoreBitem}{#2}}
+    \ifstrempty{#3}{}{\renewcommand{\LoreBname}{#3}}
+}
 \newcommand{\LoreBtotal}{\fpeval{\INTMod + \LoreBprof + \LoreBitem}}
 
 \newcommand{\MedicineTEML}{0}
+\newcommand{\Medicineprof}{0}
 \newcommand{\Medicineitem}{0}
-\newcommand{\Medicine}[2]{   \TEMLswitch{#1}{\MedicineTEML}
-                        \ifstrempty{#2}{}{\renewcommand{\Medicineitem}{#2}}
-                        }
-
-\newcommand{\Medicineprof}{\ifstrequal{\MedicineTEML}{0}{0}{\fpeval{\LevelValue + \MedicineTEML}}}
+\newcommand{\Medicine}[2]{
+    \TEMLswitch{#1}{\MedicineTEML}
+    \ifstrempty{#1}{\renewcommand{\Medicineprof}{0}}{\renewcommand{\Medicineprof}{\fpeval{\LevelValue + \MedicineTEML}}}
+    \ifstrempty{#2}{}{\renewcommand{\Medicineitem}{#2}}
+}
 \newcommand{\Medicinetotal}{\fpeval{\WISMod + \Medicineprof + \Medicineitem}}
 
 \newcommand{\NatureTEML}{0}
+\newcommand{\Natureprof}{0}
 \newcommand{\Natureitem}{0}
-\newcommand{\Nature}[2]{   \TEMLswitch{#1}{\NatureTEML}
-                        \ifstrempty{#2}{}{\renewcommand{\Natureitem}{#2}}
-                        }
-
-\newcommand{\Natureprof}{\ifstrequal{\NatureTEML}{0}{0}{\fpeval{\LevelValue + \NatureTEML}}}
+\newcommand{\Nature}[2]{
+    \TEMLswitch{#1}{\NatureTEML}
+    \ifstrempty{#1}{\renewcommand{\Natureprof}{0}}{\renewcommand{\Natureprof}{\fpeval{\LevelValue + \NatureTEML}}}
+    \ifstrempty{#2}{}{\renewcommand{\Natureitem}{#2}}
+}
 \newcommand{\Naturetotal}{\fpeval{\WISMod + \Natureprof + \Natureitem}}
 
 \newcommand{\OccultismTEML}{0}
+\newcommand{\Occultismprof}{0}
 \newcommand{\Occultismitem}{0}
-\newcommand{\Occultism}[2]{   \TEMLswitch{#1}{\OccultismTEML}
-                        \ifstrempty{#2}{}{\renewcommand{\Occultismitem}{#2}}
-                        }
-
-\newcommand{\Occultismprof}{\ifstrequal{\OccultismTEML}{0}{0}{\fpeval{\LevelValue + \OccultismTEML}}}
+\newcommand{\Occultism}[2]{
+    \TEMLswitch{#1}{\OccultismTEML}
+    \ifstrempty{#1}{\renewcommand{\Occultismprof}{0}}{\renewcommand{\Occultismprof}{\fpeval{\LevelValue + \OccultismTEML}}}
+    \ifstrempty{#2}{}{\renewcommand{\Occultismitem}{#2}}
+}
 \newcommand{\Occultismtotal}{\fpeval{\INTMod + \Occultismprof + \Occultismitem}}
 
 \newcommand{\PerformanceTEML}{0}
+\newcommand{\Performanceprof}{0}
 \newcommand{\Performanceitem}{0}
-\newcommand{\Performance}[2]{   \TEMLswitch{#1}{\PerformanceTEML}
-                        \ifstrempty{#2}{}{\renewcommand{\Performanceitem}{#2}}
-                        }
-
-\newcommand{\Performanceprof}{\ifstrequal{\PerformanceTEML}{0}{0}{\fpeval{\LevelValue + \PerformanceTEML}}}
+\newcommand{\Performance}[2]{
+    \TEMLswitch{#1}{\PerformanceTEML}
+    \ifstrempty{#1}{\renewcommand{\Performanceprof}{0}}{\renewcommand{\Performanceprof}{\fpeval{\LevelValue + \PerformanceTEML}}}
+    \ifstrempty{#2}{}{\renewcommand{\Performanceitem}{#2}}
+}
 \newcommand{\Performancetotal}{\fpeval{\CHAMod + \Performanceprof + \Performanceitem}}
 
 \newcommand{\ReligionTEML}{0}
+\newcommand{\Religionprof}{0}
 \newcommand{\Religionitem}{0}
-\newcommand{\Religion}[2]{   \TEMLswitch{#1}{\ReligionTEML}
-                        \ifstrempty{#2}{}{\renewcommand{\Religionitem}{#2}}
-                        }
-
-\newcommand{\Religionprof}{\ifstrequal{\ReligionTEML}{0}{0}{\fpeval{\LevelValue + \ReligionTEML}}}
+\newcommand{\Religion}[2]{
+    \TEMLswitch{#1}{\ReligionTEML}
+    \ifstrempty{#1}{\renewcommand{\Religionprof}{0}}{\renewcommand{\Religionprof}{\fpeval{\LevelValue + \ReligionTEML}}}
+    \ifstrempty{#2}{}{\renewcommand{\Religionitem}{#2}}
+}
 \newcommand{\Religiontotal}{\fpeval{\WISMod + \Religionprof + \Religionitem}}
 
 \newcommand{\SocietyTEML}{0}
+\newcommand{\Societyprof}{0}
 \newcommand{\Societyitem}{0}
-\newcommand{\Society}[2]{   \TEMLswitch{#1}{\SocietyTEML}
-                        \ifstrempty{#2}{}{\renewcommand{\Societyitem}{#2}}
-                        }
-
-\newcommand{\Societyprof}{\ifstrequal{\SocietyTEML}{0}{0}{\fpeval{\LevelValue + \SocietyTEML}}}
+\newcommand{\Society}[2]{
+    \TEMLswitch{#1}{\SocietyTEML}
+    \ifstrempty{#1}{\renewcommand{\Societyprof}{0}}{\renewcommand{\Societyprof}{\fpeval{\LevelValue + \SocietyTEML}}}
+    \ifstrempty{#2}{}{\renewcommand{\Societyitem}{#2}}
+}
 \newcommand{\Societytotal}{\fpeval{\INTMod + \Societyprof + \Societyitem}}
 
 \newcommand{\StealthTEML}{0}
+\newcommand{\Stealthprof}{0}
 \newcommand{\Stealthitem}{0}
 \newcommand{\Stealtharmor}{0}
-\newcommand{\Stealth}[3]{   \TEMLswitch{#1}{\StealthTEML}
-                        \ifstrempty{#2}{}{\renewcommand{\Stealthitem}{#2}}
-                        \ifstrempty{#3}{}{\renewcommand{\Stealtharmor}{#3}}
-                        }
-
-\newcommand{\Stealthprof}{\ifstrequal{\StealthTEML}{0}{0}{\fpeval{\LevelValue + \StealthTEML}}}
+\newcommand{\Stealth}[3]{
+    \TEMLswitch{#1}{\StealthTEML}
+    \ifstrempty{#1}{\renewcommand{\Stealthprof}{0}}{\renewcommand{\Stealthprof}{\fpeval{\LevelValue + \StealthTEML}}}
+    \ifstrempty{#2}{}{\renewcommand{\Stealthitem}{#2}}
+    \ifstrempty{#3}{}{\renewcommand{\Stealtharmor}{#3}}
+}
 \newcommand{\Stealthtotal}{\fpeval{\DEXMod + \Stealthprof + \Stealthitem - \Stealtharmor}}
 
 \newcommand{\SurvivalTEML}{0}
+\newcommand{\Survivalprof}{0}
 \newcommand{\Survivalitem}{0}
-\newcommand{\Survival}[2]{   \TEMLswitch{#1}{\SurvivalTEML}
-                        \ifstrempty{#2}{}{\renewcommand{\Survivalitem}{#2}}
-                        }
-
-\newcommand{\Survivalprof}{\ifstrequal{\SurvivalTEML}{0}{0}{\fpeval{\LevelValue + \SurvivalTEML}}}
+\newcommand{\Survival}[2]{
+    \TEMLswitch{#1}{\SurvivalTEML}
+    \ifstrempty{#1}{\renewcommand{\Survivalprof}{0}}{\renewcommand{\Survivalprof}{\fpeval{\LevelValue + \SurvivalTEML}}}
+    \ifstrempty{#2}{}{\renewcommand{\Survivalitem}{#2}}
+}
 \newcommand{\Survivaltotal}{\fpeval{\WISMod + \Survivalprof + \Survivalitem}}
 
 \newcommand{\ThieveryTEML}{0}
+\newcommand{\Thieveryprof}{0}
 \newcommand{\Thieveryitem}{0}
 \newcommand{\Thieveryarmor}{0}
-\newcommand{\Thievery}[3]{   \TEMLswitch{#1}{\ThieveryTEML}
-                        \ifstrempty{#2}{}{\renewcommand{\Thieveryitem}{#2}}
-                        \ifstrempty{#3}{}{\renewcommand{\Thieveryarmor}{#3}}
-                        }
-
-\newcommand{\Thieveryprof}{\ifstrequal{\ThieveryTEML}{0}{0}{\fpeval{\LevelValue + \ThieveryTEML}}}
+\newcommand{\Thievery}[3]{
+    \TEMLswitch{#1}{\ThieveryTEML}
+    \ifstrempty{#1}{\renewcommand{\Thieveryprof}{0}}{\renewcommand{\Thieveryprof}{\fpeval{\LevelValue + \ThieveryTEML}}}
+    \ifstrempty{#2}{}{\renewcommand{\Thieveryitem}{#2}}
+    \ifstrempty{#3}{}{\renewcommand{\Thieveryarmor}{#3}}
+}
 \newcommand{\Thieverytotal}{\fpeval{\DEXMod + \Thieveryprof + \Thieveryitem - \Thieveryarmor}}
 
 \newcommand{\LanguagesValue}{}
@@ -404,16 +427,17 @@
 % % % WEAPONS % % %
 \newcommand{\MWAname}{}
 \newcommand{\MWATEML}{0}
+\newcommand{\MWAprof}{0}
 \newcommand{\MWAitem}{0}
 \newcommand{\MWAdice}{}
 \newcommand{\MWABPS}{}
 \newcommand{\MWAWSpec}{}
 \newcommand{\MWAOther}{}
 \newcommand{\MWATraits}{}
-
 \newcommand{\MWeaponOne}[8]{   
     \renewcommand{\MWAname}{#1} 
     \TEMLswitch{#2}{\MWATEML}
+    \ifstrempty{#1}{\renewcommand{\MWAprof}{0}}{\renewcommand{\MWAprof}{\fpeval{\LevelValue + \MWATEML}}}
     \ifstrempty{#3}{}{\renewcommand{\MWAitem}{#3}}
     \renewcommand{\MWAdice}{#4}
     \renewcommand{\MWABPS}{#5}
@@ -421,6 +445,4 @@
     \renewcommand{\MWAOther}{#7}
     \renewcommand{\MWATraits}{#8}
 }
-
-\newcommand{\MWAprof}{\ifstrequal{\MWATEML}{0}{0}{\fpeval{\LevelValue + \MWATEML}}}
 \newcommand{\MWAstrike}{\fpeval{\STRMod + \MWAprof + \MWAitem}}
