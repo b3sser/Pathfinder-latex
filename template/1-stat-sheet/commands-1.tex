@@ -245,7 +245,7 @@
 \newcommand{\Arcanaitem}{0}
 \newcommand{\Arcana}[2]{
     \TEMLswitch{#1}{\ArcanaTEML}
-    \ifstrempty{#1}{\renewcommand{\Arcanaprof}{0}}{\renewcommand{\ArcanaTEML}{\fpeval{\LevelValue + \ArcanaTEML}}}
+    \ifstrempty{#1}{\renewcommand{\Arcanaprof}{0}}{\renewcommand{\Arcanaprof}{\fpeval{\LevelValue + \ArcanaTEML}}}
     \ifstrempty{#2}{}{\renewcommand{\Arcanaitem}{#2}}
 }
 \newcommand{\Arcanatotal}{\fpeval{\INTmod + \Arcanaprof + \Arcanaitem}}
