@@ -68,7 +68,15 @@
 %\newcommand{\renderpersonalitysheet}{\input{template/3-personality-sheet.tex}}
 %\newcommand{\renderspellsheet}{\input{template/4-spell-sheet.tex}}
 
-% % % DISPLAY TEML % % %
+% % % TEML PARSING % % %
+\newcommand{\TEMLswitch}[2]{
+    \ifstrequal{#1}{T}{\renewcommand{#2}{2}}{}
+    \ifstrequal{#1}{E}{\renewcommand{#2}{4}}{}
+    \ifstrequal{#1}{M}{\renewcommand{#2}{6}}{}
+    \ifstrequal{#1}{L}{\renewcommand{#2}{8}}{}
+    \ifstrempty{#1}{\renewcommand{#2}{0}}{}
+}
+
 \newcommand{\TEMLdisplay}[1]{
     \ifnumcomp{#1}{>}{7}{XXXX}{
     \ifnumcomp{#1}{>}{5}{XXX}{
