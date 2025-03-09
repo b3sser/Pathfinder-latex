@@ -1,24 +1,44 @@
-% % %  ARMOR  % % %
-\rput(330,104){\small \HeadArmorName}
-\rput(387,104){\small \HeadArmorSP}
-\rput(422,104){\small \HeadArmorPen}
+% % % MELEE STRIKES % % %
+\rput[lt](32,413){\Large \MWAname}
+\rput(222,405){\Large \STRmod}
+\rput[l](263.6,405){\parbox{50pt}{\TEMLsize \TEMLdisplay{\MWATEML}}}
+\rput(248,405){\Large \MWAprof}
+\rput(310,405){\Large \MWAitem}
+\rput(180,411){\huge \MWAstrike}
 
-\rput(330,90.5){\small \BodyArmorName}
-\rput(387,90.5){\small \BodyArmorSP}
-\rput(422,90.5){\small \BodyArmorPen}
+\rput(40,375){\Large \MWAdice}
+\rput(70,375){\Large +\STRmod}
+\ifnumcomp{\MWABPS}{=}{0}{}{\rput(93,\fpeval{369.5+\MWABPS}){\large x}}
+\ifnumcomp{\MWAWSpec}{=}{0}{}{\rput(121,375){\Large +\MWAWSpec}}
+\rput[lb](140,369){\parbox{66pt}{\scriptsize \MWAOther}}
+\rput[lt](213,380){\MWATraits}
 
-\rput(330,77){\small \ShieldName}
-\rput(387,77){\small \ShieldSP}
-\rput(422,77){\small \ShieldPen}
 
-% % % %  WEAPONS  % % %
-\rput[lt](447,140){
-    \parbox{315pt}{
-        \justify
-        \renewcommand{\arraystretch}{1.4}
-        \begin{tabular}{p{90pt}p{25.5pt}p{32pt}p{21pt}p{118.5pt}}
-            \WeaponsTable
-        \end{tabular}
-        \renewcommand{\arraystretch}{1} % Reset to default value 1
-    }
-}
+\rput[lt](32,355){\Large \MWBname}
+\rput(222,347){\Large \STRmod}
+\rput[l](263.6,347){\parbox{50pt}{\TEMLsize \TEMLdisplay{\MWBTEML}}}
+\rput(248,347){\Large \MWBprof}
+\rput(310,347){\Large \MWBitem}
+\rput(180,353){\huge \MWBstrike}
+
+\rput(40,317){\Large \MWBdice}
+\rput(70,317){\Large +\STRmod}
+\ifnumcomp{\MWBBPS}{=}{0}{}{\rput(93,\fpeval{311.5+\MWBBPS}){\large x}}
+\ifnumcomp{\MWBWSpec}{=}{0}{}{\rput(121,317){\Large +\MWBWSpec}}
+\rput[lb](140,311){\parbox{66pt}{\scriptsize \MWBOther}}
+\rput[lt](213,322){\MWBTraits}
+
+
+\rput[lt](32,297){\Large \MWCname}
+\rput(222,289){\Large \STRmod}
+\rput[l](263.6,289){\parbox{50pt}{\TEMLsize \TEMLdisplay{\MWCTEML}}}
+\rput(248,289){\Large \MWCprof}
+\rput(310,289){\Large \MWCitem}
+\rput(180,295){\huge \MWCstrike}
+
+\rput(40,259){\Large \MWCdice}
+\rput(70,259){\Large +\STRmod}
+\ifnumcomp{\MWCBPS}{=}{0}{}{\rput(93,\fpeval{253.5+\MWCBPS}){\large x}}
+\ifnumcomp{\MWCWSpec}{=}{0}{}{\rput(121,259){\Large +\MWCWSpec}}
+\rput[lb](140,253){\parbox{66pt}{\scriptsize \MWCOther}}
+\rput[lt](213,264){\MWCTraits}
