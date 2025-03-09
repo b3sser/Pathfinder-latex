@@ -422,7 +422,7 @@
 \newcommand{\MWAitem}{0}
 \newcommand{\MWAdice}{}
 \newcommand{\MWABPS}{}
-\newcommand{\MWAWSpec}{}
+\newcommand{\MWAWSpec}{0}
 \newcommand{\MWAOther}{}
 \newcommand{\MWATraits}{}
 \newcommand{\MWeaponOne}[8]{   
@@ -432,7 +432,7 @@
     \ifstrempty{#3}{}{\renewcommand{\MWAitem}{#3}}
     \renewcommand{\MWAdice}{#4}
     \BPSshift{#5}{\MWABPS}
-    \renewcommand{\MWAWSpec}{#6}
+    \ifstrempty{#6}{\renewcommand{\MWAWSpec}{0}}{\renewcommand{\MWAWSpec}{#6}}
     \renewcommand{\MWAOther}{#7}
     \renewcommand{\MWATraits}{#8}
 }
