@@ -92,3 +92,10 @@
     \ifstrequal{#1}{S}{\renewcommand{#2}{1}}{}
     \ifstrempty{#1}{\renewcommand{#2}{0}}{}
 }
+
+% % % RANGED WEAPON SPECIAL PARSING % % %
+\newcommand{\RspecialParse}[2]{
+    \ifstrequal{#1}{fullStr}{\renewcommand{#2}{+\STRmod}}{
+    \ifstrequal{#1}{halfStr}{\renewcommand{#2}{+\fpeval{floor(\STRmod/2)}}}{
+    \ifstrempty{#1}{\renewcommand{#2}{+0}}{\renewcommand{#2}{+#1}}}}
+}

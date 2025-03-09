@@ -415,7 +415,7 @@
 \newcommand{\Languages}[1]{\ifstrempty{#1}{}{\renewcommand{\LanguagesValue}{#1}}}
 
 
-% % % WEAPONS % % %
+% % % MELEE WEAPONS % % %
 \newcommand{\MWAname}{}
 \newcommand{\MWATEML}{0}
 \newcommand{\MWAprof}{0}
@@ -481,3 +481,79 @@
     \renewcommand{\MWCTraits}{#8}
 }
 \newcommand{\MWCstrike}{\fpeval{\STRmod + \MWCprof + \MWCitem}}
+
+
+% % % RANGED WEAPONS % % %
+\newcommand{\RWAname}{}
+\newcommand{\RWATEML}{0}
+\newcommand{\RWAprof}{0}
+\newcommand{\RWAitem}{0}
+\newcommand{\RWAdice}{}
+\newcommand{\RWAspecial}{}
+\newcommand{\RWABPS}{}
+\newcommand{\RWAWSpec}{0}
+\newcommand{\RWAOther}{}
+\newcommand{\RWATraits}{}
+\newcommand{\RWeaponOne}[9]{
+    \renewcommand{\RWAname}{#1}
+    \TEMLswitch{#2}{\RWATEML}
+    \ifstrempty{#1}{\renewcommand{\RWAprof}{0}}{\renewcommand{\RWAprof}{\fpeval{\LevelValue + \RWATEML}}}
+    \ifstrempty{#3}{}{\renewcommand{\RWAitem}{#3}}
+    \renewcommand{\RWAdice}{#4}
+    \RspecialParse{#5}{\RWAspecial}
+    \BPSshift{#6}{\RWABPS}
+    \ifstrempty{#7}{\renewcommand{\RWAWSpec}{0}}{\renewcommand{\RWAWSpec}{#7}}
+    \renewcommand{\RWAOther}{#8}
+    \renewcommand{\RWATraits}{#9}
+}
+\newcommand{\RWAstrike}{\fpeval{\DEXmod + \RWAprof + \RWAitem}}
+
+
+\newcommand{\RWBname}{}
+\newcommand{\RWBTEML}{0}
+\newcommand{\RWBprof}{0}
+\newcommand{\RWBitem}{0}
+\newcommand{\RWBdice}{}
+\newcommand{\RWBspecial}{}
+\newcommand{\RWBBPS}{}
+\newcommand{\RWBWSpec}{0}
+\newcommand{\RWBOther}{}
+\newcommand{\RWBTraits}{}
+\newcommand{\RWeaponTwo}[9]{
+    \renewcommand{\RWBname}{#1}
+    \TEMLswitch{#2}{\RWBTEML}
+    \ifstrempty{#1}{\renewcommand{\RWBprof}{0}}{\renewcommand{\RWBprof}{\fpeval{\LevelValue + \RWBTEML}}}
+    \ifstrempty{#3}{}{\renewcommand{\RWBitem}{#3}}
+    \renewcommand{\RWBdice}{#4}
+    \RspecialParse{#5}{\RWBspecial}
+    \BPSshift{#6}{\RWBBPS}
+    \ifstrempty{#7}{\renewcommand{\RWBWSpec}{0}}{\renewcommand{\RWBWSpec}{#7}}
+    \renewcommand{\RWBOther}{#8}
+    \renewcommand{\RWBTraits}{#9}
+}
+\newcommand{\RWBstrike}{\fpeval{\DEXmod + \RWBprof + \RWBitem}}
+
+
+\newcommand{\RWCname}{}
+\newcommand{\RWCTEML}{0}
+\newcommand{\RWCprof}{0}
+\newcommand{\RWCitem}{0}
+\newcommand{\RWCdice}{}
+\newcommand{\RWCspecial}{}
+\newcommand{\RWCBPS}{}
+\newcommand{\RWCWSpec}{0}
+\newcommand{\RWCOther}{}
+\newcommand{\RWCTraits}{}
+\newcommand{\RWeaponThree}[9]{
+    \renewcommand{\RWCname}{#1}
+    \TEMLswitch{#2}{\RWCTEML}
+    \ifstrempty{#1}{\renewcommand{\RWCprof}{0}}{\renewcommand{\RWCprof}{\fpeval{\LevelValue + \RWCTEML}}}
+    \ifstrempty{#3}{}{\renewcommand{\RWCitem}{#3}}
+    \renewcommand{\RWCdice}{#4}
+    \RspecialParse{#5}{\RWCspecial}
+    \BPSshift{#6}{\RWCBPS}
+    \ifstrempty{#7}{\renewcommand{\RWCWSpec}{0}}{\renewcommand{\RWCWSpec}{#7}}
+    \renewcommand{\RWCOther}{#8}
+    \renewcommand{\RWCTraits}{#9}
+}
+\newcommand{\RWCstrike}{\fpeval{\DEXmod + \RWCprof + \RWCitem}}
