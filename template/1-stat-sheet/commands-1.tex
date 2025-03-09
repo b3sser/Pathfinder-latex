@@ -437,3 +437,47 @@
     \renewcommand{\MWATraits}{#8}
 }
 \newcommand{\MWAstrike}{\fpeval{\STRmod + \MWAprof + \MWAitem}}
+
+\newcommand{\MWBname}{}
+\newcommand{\MWBTEML}{0}
+\newcommand{\MWBprof}{0}
+\newcommand{\MWBitem}{0}
+\newcommand{\MWBdice}{}
+\newcommand{\MWBBPS}{}
+\newcommand{\MWBWSpec}{0}
+\newcommand{\MWBOther}{}
+\newcommand{\MWBTraits}{}
+\newcommand{\MWeaponTwo}[8]{   
+    \renewcommand{\MWBname}{#1} 
+    \TEMLswitch{#2}{\MWBTEML}
+    \ifstrempty{#1}{\renewcommand{\MWBprof}{0}}{\renewcommand{\MWBprof}{\fpeval{\LevelValue + \MWBTEML}}}
+    \ifstrempty{#3}{}{\renewcommand{\MWBitem}{#3}}
+    \renewcommand{\MWBdice}{#4}
+    \BPSshift{#5}{\MWBBPS}
+    \ifstrempty{#6}{\renewcommand{\MWBWSpec}{0}}{\renewcommand{\MWBWSpec}{#6}}
+    \renewcommand{\MWBOther}{#7}
+    \renewcommand{\MWBTraits}{#8}
+}
+\newcommand{\MWBstrike}{\fpeval{\STRmod + \MWCprof + \MWCitem}}
+
+\newcommand{\MWCname}{}
+\newcommand{\MWCTEML}{0}
+\newcommand{\MWCprof}{0}
+\newcommand{\MWCitem}{0}
+\newcommand{\MWCdice}{}
+\newcommand{\MWCBPS}{}
+\newcommand{\MWCWSpec}{0}
+\newcommand{\MWCOther}{}
+\newcommand{\MWCTraits}{}
+\newcommand{\MWeaponThree}[8]{   
+    \renewcommand{\MWCname}{#1} 
+    \TEMLswitch{#2}{\MWCTEML}
+    \ifstrempty{#1}{\renewcommand{\MWCprof}{0}}{\renewcommand{\MWCprof}{\fpeval{\LevelValue + \MWCTEML}}}
+    \ifstrempty{#3}{}{\renewcommand{\MWCitem}{#3}}
+    \renewcommand{\MWCdice}{#4}
+    \BPSshift{#5}{\MWCBPS}
+    \ifstrempty{#6}{\renewcommand{\MWCWSpec}{0}}{\renewcommand{\MWCWSpec}{#6}}
+    \renewcommand{\MWCOther}{#7}
+    \renewcommand{\MWCTraits}{#8}
+}
+\newcommand{\MWCstrike}{\fpeval{\STRmod + \MWCprof + \MWCitem}}
