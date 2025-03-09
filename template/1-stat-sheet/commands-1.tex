@@ -557,3 +557,27 @@
     \renewcommand{\RWCTraits}{#9}
 }
 \newcommand{\RWCstrike}{\fpeval{\DEXmod + \RWCprof + \RWCitem}}
+
+
+% % % WEAPON PROFICIENCIES % % %
+\newcommand{\WPsimple}{}
+\newcommand{\WPmartial}{}
+\newcommand{\WPotherA}{}
+\newcommand{\WPotherAtype}{}
+\newcommand{\WPotherB}{}
+\newcommand{\WPotherBtype}{}
+
+\newcommand{\simple}[1]{
+    \TEMLswitch{#1}{\WPsimple}
+}
+\newcommand{\martial}[1]{
+    \TEMLswitch{#1}{\WPmartial}
+}
+\newcommand{\otherA}[2]{
+    \TEMLswitch{#1}{\WPotherA}
+    \renewcommand{\WPotherAtype}{#2}
+}
+\newcommand{\otherB}[2]{
+    \TEMLswitch{#1}{\WPotherB}
+    \renewcommand{\WPotherBtype}{#2}
+}
