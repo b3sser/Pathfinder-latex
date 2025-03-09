@@ -440,7 +440,7 @@
     \ifstrempty{#1}{\renewcommand{\MWAprof}{0}}{\renewcommand{\MWAprof}{\fpeval{\LevelValue + \MWATEML}}}
     \ifstrempty{#3}{}{\renewcommand{\MWAitem}{#3}}
     \renewcommand{\MWAdice}{#4}
-    \renewcommand{\MWABPS}{#5}
+    \BPSshift{#5}{\MWABPS}
     \renewcommand{\MWAWSpec}{#6}
     \renewcommand{\MWAOther}{#7}
     \renewcommand{\MWATraits}{#8}

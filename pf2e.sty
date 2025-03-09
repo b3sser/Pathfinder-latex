@@ -76,3 +76,11 @@
     \ifnumcomp{#1}{>}{1}{X}{
     }}}}
 }
+
+% % % BPS PARSING % % %
+\newcommand{\BPSshift}[2]{
+    \ifstrequal{#1}{B}{\renewcommand{#2}{17}}{}
+    \ifstrequal{#1}{P}{\renewcommand{#2}{9}}{}
+    \ifstrequal{#1}{S}{\renewcommand{#2}{1}}{}
+    \ifstrempty{#1}{\renewcommand{#2}{0}}{}
+}
