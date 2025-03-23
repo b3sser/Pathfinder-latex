@@ -16,7 +16,7 @@
 
 % false for coloured sheet background
 % true for monochrome sheet background
-\printerfriendly{true}
+\printerfriendly{false}
 
 % % % % % % % % % %
 % % %  PAGE 1 % % %
@@ -24,114 +24,114 @@
 
 
 % % %  HEADER  % % %
-\Name{}
-\Player{}
-\XP{}
+\Name{Person McPersonface}
+\Player{Blahaj}
+\XP{1200}
 
-\Ancestry{}
-\Heritage{}
-\Background{}
-\Class{}
-\Size{}         % accepts inputs T, S, M, L, H, G
-\Alignment{}    % accepts inputs LG, NG, CG, LN, NN, CN, LE, NE, CE
-\Traits{}
-\Deity{}
+\Ancestry{Shark}
+\Heritage{Changeling}
+\Background{Dropout}
+\Class{Social Worker}
+\Size{S}         % accepts inputs T, S, M, L, H, G
+\Alignment{NG}    % accepts inputs LG, NG, CG, LN, NN, CN, LE, NE, CE
+\Traits{fluffy, cute}
+\Deity{The great Marshmallow}
 
-\Level{}        % This is used to auto-calculate Proficiency Bonus
-\HeroPoints{}
+\Level{1}        % This is used to auto-calculate Proficiency Bonus
+\HeroPoints{1}
 
 
 % % % ABILITY SCORES % % %
-\STR{}
-\DEX{}
+\STR{16}
+\DEX{14}
 \CON{}
 \WIS{}
 \INT{}
-\CHA{}
+\CHA{16}
 % Modifiers will be auto-calculated.
 
 
 % % % CLASS DC % % %
-\KeyAbility{}   % accepts inputs Str, Dex, Con, Wis, Int, Cha
-\ClassDC{}{}    % \ClassDC{T/E/M/L}{item}
+\KeyAbility{Cha}   % accepts inputs Str, Dex, Con, Wis, Int, Cha
+\ClassDC{E}{2}    % \ClassDC{T/E/M/L}{item}
 
 
 % % % ARMOR CLASS % % %
-\AC{}{}{}   % \AC{cap(if applicable)}{T/E/M/L}{item}
+\AC{4}{M}{1}   % \AC{cap(if applicable)}{T/E/M/L}{item}
 % The AC field will show your total value WITHOUT a shield
 
 % following four accept T, E, M, L input
-\unarmored{}
-\light{}
-\medium{}
-\heavy{}
+\unarmored{T}
+\light{E}
+\medium{M}
+\heavy{L}
 
-\Shield{}{}{}{}{}   % \Shield{AC+}{Hardness}{MaxHP}{BT}{CurrentHP}
+\Shield{2}{3}{13}{4}{10}   % \Shield{AC+}{Hardness}{MaxHP}{BT}{CurrentHP}
 
 
 % % % SAVING THROWS % % %
 
 % \Save{T/E/M/L}{Item}
-\Fortitude{}{}
-\Reflex{}{}
-\Will{}{}
+\Fortitude{T}{1}
+\Reflex{E}{1}
+\Will{M}{1}
 
-\SavingThrowNotes{}
+\SavingThrowNotes{Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor.}
 
 
 % % % HIT POINTS % % %
-\HPMax{}
-\HPCurrent{}
-\HPTemporary{}
-\HPDying{}
-\HPWounded{}
+\HPMax{23}
+\HPCurrent{18}
+\HPTemporary{4}
+\HPDying{0}
+\HPWounded{1}
 
-\ResisImmune{}
-\Conditions{}
+\ResisImmune{resistance against tired, immune against distracted}
+\Conditions{motivated, clever, tasty, bored, hungry, sharply dressed}
 
 
 % % % PERCEPTON % % %
-\Perception{}{}    % \Perception{T/E/M/L}{item}
-\Senses{}
+\Perception{M}{2}    % \Perception{T/E/M/L}{item}
+\Senses{nightvision 30ft, ghost hearing 15ft}
 
 
 % % % SPEED % % %
-\SpeedFeet{}
-\MovementTypesNotes{}
+\SpeedFeet{30}
+\MovementTypesNotes{flying 30ft, dancing 5ft, swimming 10ft}
 
 
 
 % % % SKILLS % % %
 % \SkillName{T/E/M/L}{item}
 
-\Acrobatics{}{}{}   % third is for armor malus
-\Arcana{}{}
-\Athletics{}{}{}    % third is for armor malus
-\Crafting{}{}
-\Deception{}{}
-\Diplomacy{}{}
-\Intimidation{}{}
-\LoreA{}{}{}        % third is for type of lore
-\LoreB{}{}{}        % third is for type of lore
-\Medicine{}{}
-\Nature{}{}
-\Occultism{}{}
-\Performance{}{}
-\Religion{}{}
-\Society{}{}
-\Stealth{}{}{}    % third is for armor malus
-\Survival{}{}
-\Thievery{}{}{}    % third is for armor malus
+\Acrobatics{T}{6}{2}   % third is for armor malus
+\Arcana{E}{}
+\Athletics{M}{}{}    % third is for armor malus
+\Crafting{L}{}
+\Deception{T}{}
+\Diplomacy{E}{}
+\Intimidation{M}{}
+\LoreA{L}{}{Chaos}        % third is for type of lore
+\LoreB{T}{}{Order}        % third is for type of lore
+\Medicine{E}{}
+\Nature{M}{}
+\Occultism{L}{}
+\Performance{T}{}
+\Religion{E}{}
+\Society{M}{}
+\Stealth{L}{}{}    % third is for armor malus
+\Survival{T}{}
+\Thievery{E}{}{}    % third is for armor malus
 
-\Languages{}
+\Languages{common, celestial, abyssal, elvish, dwarvish, giant}
 
 
 
 % % % MELEE STRIKES % % %
 % \MWeapon {Weapon} {T/E/M/L} {item} {Dice} {B/P/S} {WSpec} {Other} {Traits}
-\MWeaponOne{}{}{}{}{}{}{}{}
-\MWeaponTwo{}{}{}{}{}{}{}{}
-\MWeaponThree{}{}{}{}{}{}{}{}
+\MWeaponOne{Bonk Stick}{T}{2}{d6}{B}{1}{issued by the horny\\[-2pt] police}{anti-horny}
+\MWeaponTwo{Sword of Swordiness}{E}{4}{d8}{S}{4}{}{very swordy}
+\MWeaponThree{Taschenlampe}{M}{7}{d12}{}{}{radiant damage}{holy}
 
 % Note:
 % Through much pain have I tried to set the line spacing for the "Other" field in such a way,
@@ -142,16 +142,16 @@
 % % % RANGED STRIKES % % %
 % \RWeapon {Weapon} {T/E/M/L} {item} {Dice} {Special} {B/P/S} {WSpec} {Other} {Traits}
 % Special accepts "fullStr", "halfStr" or a number
-\RWeaponOne{}{}{}{}{}{}{}{}{}
-\RWeaponTwo{}{}{}{}{}{}{}{}{}
-\RWeaponThree{}{}{}{}{}{}{}{}{}
+\RWeaponOne{Crossbowtie}{L}{1}{d8}{halfStr}{P}{1}{test}{test}
+\RWeaponTwo{Throwable Plush}{E}{}{d6}{fullStr}{B}{}{test}{test}
+\RWeaponThree{Water Gun}{M}{2}{d4}{}{}{4}{test}{test}
 
 
 % % % WEAPON PROFICIENCIES % % %
-\simple{}   % T/E/M/L
-\martial{}  % T/E/M/L
-\otherA{}{} % T/E/M/L, type
-\otherB{}{} % T/E/M/L, type
+\simple{L}   % T/E/M/L
+\martial{M}  % T/E/M/L
+\otherA{E}{sticks} % T/E/M/L, type
+\otherB{T}{very hard candy} % T/E/M/L, type
 
 
 
