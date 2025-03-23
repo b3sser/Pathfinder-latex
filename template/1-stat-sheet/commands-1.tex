@@ -18,11 +18,12 @@
 \newcommand{\Player}[1]{\renewcommand{\PlayerValue}{#1}}
 \newcommand{\XP}[1]{\renewcommand{\XPValue}{#1}}
 \newcommand{\Ancestry}[1]{\renewcommand{\AncestryValue}{#1}}
-\newcommand{\Heritage}[1]{\renewcommand{\HeritageValue}{#1}}
+\newcommand{\Heritage}[1]{\ifstrempty{#1}{\renewcommand{\HeritageValue}{}}{\renewcommand{\HeritageValue}{(#1)}}}
 \newcommand{\Background}[1]{\renewcommand{\BackgroundValue}{#1}}
 \newcommand{\Class}[1]{\renewcommand{\ClassValue}{#1}}
 \newcommand{\Size}[1]{\renewcommand{\SizeValue}{#1}}
-\newcommand{\Alignment}[1]{\ifstrempty{#1}{}{\renewcommand{\AlignmentValue}{#1}
+\newcommand{\Alignment}[1]{\ifstrempty{#1}{\renewcommand{\AlignmentLong}{unaligned}}
+    {\renewcommand{\AlignmentValue}{#1}
         \ifstrequal{#1}{LG}{\renewcommand{\AlignmentLong}{Lawful\ Good}}
     {\ifstrequal{#1}{NG}{\renewcommand{\AlignmentLong}{Neutral\ Good}}
     {\ifstrequal{#1}{CG}{\renewcommand{\AlignmentLong}{Chaotic\ Good}}
@@ -32,7 +33,7 @@
     {\ifstrequal{#1}{LE}{\renewcommand{\AlignmentLong}{Lawful\ Evil}}
     {\ifstrequal{#1}{NE}{\renewcommand{\AlignmentLong}{Neutral\ Evil}}
     {\ifstrequal{#1}{CE}{\renewcommand{\AlignmentLong}{Chaotic\ Evil}}
-    {error2}}}}}}}}}
+    {}}}}}}}}}
 }}
 
 \newcommand{\Traits}[1]{\renewcommand{\TraitsValue}{#1}}
