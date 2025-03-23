@@ -1,0 +1,13 @@
+\begin{pspicture}(\paperwidth,\paperheight)
+
+    % Set background
+    \begin{tikzpicture}[remember picture,overlay]
+        \node[inner sep=0pt] at (current page.center)
+        {\includegraphics[page=2,width=\paperwidth,height=\paperheight]{\bgcolbw}};
+    \end{tikzpicture}
+
+    % Import parts of sheet
+    \input{template/2-feat-sheet/2-table.tex}
+    \input{template/2-feat-sheet/2-inventory.tex}
+
+\end{pspicture}
