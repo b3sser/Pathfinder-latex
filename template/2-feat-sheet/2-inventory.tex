@@ -1,0 +1,47 @@
+% % Worn Items % %
+\rput[lt](25,221){
+    \parbox{254pt}{
+        \renewcommand{\arraystretch}{1.1}
+        \begin{tabular}{p{220pt}>{\centering\arraybackslash}p{17pt}>{\centering\arraybackslash}p{17pt}}
+            \WornItemsTable 
+            & \tiny Total:\theInvest{} & 
+        \end{tabular}
+        \renewcommand{\arraystretch}{1} % Reset to default value 1
+    }
+}
+
+% % Readied Items % %
+\rput[lt](315.5,221){
+    \parbox{126pt}{
+        \renewcommand{\arraystretch}{1.1}
+        \begin{tabular}{p{115pt}>{\centering\arraybackslash}p{10.7pt}}
+            \ReadiedItemsTable 
+        \end{tabular}
+        \renewcommand{\arraystretch}{1} % Reset to default value 1
+    }
+}
+
+% % Other Items % %
+\rput[lt](456.9,221){
+    \parbox{126pt}{
+        \renewcommand{\arraystretch}{1.1}
+        \begin{tabular}{p{115pt}>{\centering\arraybackslash}p{10.7pt}}
+            \OtherItemsTable 
+        \end{tabular}
+        \renewcommand{\arraystretch}{1} % Reset to default value 1
+    }
+}
+
+
+% % Bulk & Encumberance % %
+\rput(343,41){\huge \fpeval{\bulk}}
+\rput(387,62){\Large \Encumbered}
+\rput(439,59.5){\Large \STRmod}
+\rput(387,32){\Large \Maximum}
+\rput(439,29.5){\Large \STRmod}
+
+% % Money % %
+\rput(475,56){\huge \CPValue}
+\rput(511.3,56){\huge \SPValue}
+\rput(547.6,56){\huge \GPValue}
+\rput(584,56){\huge \PPValue}
