@@ -162,6 +162,9 @@
 % for the category and a level number or other designation.
 % Feel free to remove any unused (empty) lines.
 
+% !! These are parsed to a tabular. If you want to use the & sign,
+% please use \& to avoid compilation errors !!
+
 % % Ancestry Feats & Abilities % %
 \ASpecial{}
 \AHeritage{}
@@ -219,6 +222,30 @@
 % % Bonus Feats % %
 \BFeatA{}
 \BFeatB{}
+
+
+% % % INVENTORY % % %
+% % Worn Items % %
+
+% \AddWornItem{Name}{Invest}{Bulk}
+% Invest can be X, ✓ or anything you like, any non-empty input will be counted.
+% Bulk should be L or a number
+\AddWornItem{}{}{}
+\AddWornItem{}{}{}
+
+% % Readied Items % %
+\AddReadiedItem{}{}
+\AddReadiedItem{}{}
+
+% % Other Items % %
+\AddOtherItem{}{}
+\AddOtherItem{}{}
+
+% % Money % %
+\CP{}
+\SP{}
+\GP{}
+\PP{}
 
 
 
