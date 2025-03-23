@@ -5,7 +5,7 @@ LaTeX template for typesetting Pathfinder 2e Character Sheets
 
 ## Features
 - 4-page Character Sheet
-- Automatic calculation of Modifiers, Proficience and other Derived Stats
+- Automatic calculation of Modifiers, Proficiency and other Derived Stats
 - Player input via custom commands for a clean and compact tex file
 - Example character to illustrate usage
 
@@ -17,18 +17,15 @@ LaTeX template for typesetting Pathfinder 2e Character Sheets
 
 Look at ```example-character.tex``` for guidance
 
-#### Auto-calculation of stats
-If you want auto-calculation, make sure to leave the fields supporting this feature blank or remove the command entirely.
+#### Tips & Tricks
+- Each stat has a custom command, listed and sorted in the empty sheet. The names of the commands should tell you, what Stat goes in there. If there are options, multiple arguments or other things special to a command, they will be explained in a comment.
+- For Skills and Weapons, if you want to leave a line completely blank, you can just delete it for a cleaner tex-file and everything should still work as expected. If it doesn't, please open an issue.
 
-When working with auto-calculation, you can overwrite selected values with your own input (e.g. when an feat you have changes that value), simply by using the command like you would in a sheet without auto-calculation. The calculated value is only set as the default and can be overwritten this way.
-
-#### More Tips
-- Each stat has a custom command, listed and sorted in the empty sheet. The names of the commands should tell you, what Stat goes in there. If there are options, multiple arguments or other things special to a command, they will be explained in a comment right above it.
-- For most fields, if you want to leave a command blank for auto-calculation or because that field should stay blank, you can just delete the command for a cleaner tex-file and everything should still work as expected.
-
-- Multiline-fields have automatic line-wrap, for others use ```\\``` where needed
+- Some fields have automatic line-wrap, for others use ```\\``` where needed
 - All fields have a default font size to fit with a normal amount of input. You can change the size for selected fields by adding a size command before your actual input.
     - Sizes: ```\Huge```, ```\huge```, ```\LARGE```, ```\Large```, ```\large```, ```\normalsize```, ```\small```, ```\footnotsize```, ```\scriptsize```, ```\tiny```
+
+- If you need to overwrite the auto-calculated values, you can often do so, by using ```\renewcommand``` *after* the command it is associated with. *E.g. using ```\renewcommand{\ACtotal}{20}``` after the ```\AC{}{}{}``` command.* You can find out, what the values are called by checking the respective ```commands.tex``` for the page. If you have trouble with this, feel free to contact me for advice and custom solutions any time.
 
 ## Compilation & Dependencies
 This Template is designed to be compiled with **XeLaTeX**. XeTeX may also work but is not explicitely tested.
