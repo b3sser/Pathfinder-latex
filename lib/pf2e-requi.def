@@ -18,7 +18,7 @@
 \RequirePackage {microtype} % Improve ragged2e hyphenation and overfull boxes
 \RequirePackage {ragged2e}
 
-\RequirePackage{pstricks}
+\RequirePackage{pstricks}   % For placing the values onto the paper
 \RequirePackage{tabularray}
 
 \RequirePackage{ifthen}
