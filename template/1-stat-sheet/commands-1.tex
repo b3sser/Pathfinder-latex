@@ -105,7 +105,7 @@
 \newcommand{\AC}[3]{
     \ifstrempty{#1}{}{\renewcommand{\ACcap}{#1}}
     \TEMLswitch{#2}{\ACTEML}
-    \ifstrempty{#1}{\renewcommand{\ACprof}{0}}{\renewcommand{\ACprof}{\fpeval{\LevelValue + \ACTEML}}}
+    \ifstrempty{#2}{\renewcommand{\ACprof}{0}}{\renewcommand{\ACprof}{\fpeval{\LevelValue + \ACTEML}}}
     \ifstrempty{#3}{}{\renewcommand{\ACitem}{#3}}
 }
 
@@ -429,7 +429,7 @@
 \newcommand{\MWeaponOne}[8]{   
     \renewcommand{\MWAname}{#1} 
     \TEMLswitch{#2}{\MWATEML}
-    \ifstrempty{#1}{\renewcommand{\MWAprof}{0}}{\renewcommand{\MWAprof}{\fpeval{\LevelValue + \MWATEML}}}
+    \ifstrempty{#2}{\renewcommand{\MWAprof}{0}}{\renewcommand{\MWAprof}{\fpeval{\LevelValue + \MWATEML}}}
     \ifstrempty{#3}{}{\renewcommand{\MWAitem}{#3}}
     \renewcommand{\MWAdice}{#4}
     \BPSshift{#5}{\MWABPS}
@@ -451,7 +451,7 @@
 \newcommand{\MWeaponTwo}[8]{   
     \renewcommand{\MWBname}{#1} 
     \TEMLswitch{#2}{\MWBTEML}
-    \ifstrempty{#1}{\renewcommand{\MWBprof}{0}}{\renewcommand{\MWBprof}{\fpeval{\LevelValue + \MWBTEML}}}
+    \ifstrempty{#2}{\renewcommand{\MWBprof}{0}}{\renewcommand{\MWBprof}{\fpeval{\LevelValue + \MWBTEML}}}
     \ifstrempty{#3}{}{\renewcommand{\MWBitem}{#3}}
     \renewcommand{\MWBdice}{#4}
     \BPSshift{#5}{\MWBBPS}
@@ -473,7 +473,7 @@
 \newcommand{\MWeaponThree}[8]{   
     \renewcommand{\MWCname}{#1} 
     \TEMLswitch{#2}{\MWCTEML}
-    \ifstrempty{#1}{\renewcommand{\MWCprof}{0}}{\renewcommand{\MWCprof}{\fpeval{\LevelValue + \MWCTEML}}}
+    \ifstrempty{#2}{\renewcommand{\MWCprof}{0}}{\renewcommand{\MWCprof}{\fpeval{\LevelValue + \MWCTEML}}}
     \ifstrempty{#3}{}{\renewcommand{\MWCitem}{#3}}
     \renewcommand{\MWCdice}{#4}
     \BPSshift{#5}{\MWCBPS}
@@ -498,7 +498,7 @@
 \newcommand{\RWeaponOne}[9]{
     \renewcommand{\RWAname}{#1}
     \TEMLswitch{#2}{\RWATEML}
-    \ifstrempty{#1}{\renewcommand{\RWAprof}{0}}{\renewcommand{\RWAprof}{\fpeval{\LevelValue + \RWATEML}}}
+    \ifstrempty{#2}{\renewcommand{\RWAprof}{0}}{\renewcommand{\RWAprof}{\fpeval{\LevelValue + \RWATEML}}}
     \ifstrempty{#3}{}{\renewcommand{\RWAitem}{#3}}
     \renewcommand{\RWAdice}{#4}
     \RspecialParse{#5}{\RWAspecial}
@@ -523,7 +523,7 @@
 \newcommand{\RWeaponTwo}[9]{
     \renewcommand{\RWBname}{#1}
     \TEMLswitch{#2}{\RWBTEML}
-    \ifstrempty{#1}{\renewcommand{\RWBprof}{0}}{\renewcommand{\RWBprof}{\fpeval{\LevelValue + \RWBTEML}}}
+    \ifstrempty{#2}{\renewcommand{\RWBprof}{0}}{\renewcommand{\RWBprof}{\fpeval{\LevelValue + \RWBTEML}}}
     \ifstrempty{#3}{}{\renewcommand{\RWBitem}{#3}}
     \renewcommand{\RWBdice}{#4}
     \RspecialParse{#5}{\RWBspecial}
@@ -548,7 +548,7 @@
 \newcommand{\RWeaponThree}[9]{
     \renewcommand{\RWCname}{#1}
     \TEMLswitch{#2}{\RWCTEML}
-    \ifstrempty{#1}{\renewcommand{\RWCprof}{0}}{\renewcommand{\RWCprof}{\fpeval{\LevelValue + \RWCTEML}}}
+    \ifstrempty{#2}{\renewcommand{\RWCprof}{0}}{\renewcommand{\RWCprof}{\fpeval{\LevelValue + \RWCTEML}}}
     \ifstrempty{#3}{}{\renewcommand{\RWCitem}{#3}}
     \renewcommand{\RWCdice}{#4}
     \RspecialParse{#5}{\RWCspecial}
