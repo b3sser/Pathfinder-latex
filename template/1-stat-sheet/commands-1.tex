@@ -24,7 +24,7 @@
 \newcommand{\Size}[1]{\renewcommand{\SizeValue}{#1}}
 \newcommand{\Alignment}[1]{\ifstrempty{#1}{\renewcommand{\AlignmentLong}{unaligned}}
     {\renewcommand{\AlignmentValue}{#1}
-        \ifstrequal{#1}{LG}{\renewcommand{\AlignmentLong}{Lawful\ Good}}
+     \ifstrequal{#1}{LG}{\renewcommand{\AlignmentLong}{Lawful\ Good}}
     {\ifstrequal{#1}{NG}{\renewcommand{\AlignmentLong}{Neutral\ Good}}
     {\ifstrequal{#1}{CG}{\renewcommand{\AlignmentLong}{Chaotic\ Good}}
     {\ifstrequal{#1}{LN}{\renewcommand{\AlignmentLong}{Lawful\ Neutral}}
@@ -101,18 +101,20 @@
 \newcommand{\ACTEML}{0}
 \newcommand{\ACprof}{0}
 \newcommand{\ACitem}{0}
+\newcommand{\ACtotal}{10}
 
 \newcommand{\AC}[3]{
     \ifstrempty{#1}{}{\renewcommand{\ACcap}{#1}}
     \TEMLswitch{#2}{\ACTEML}
     \ifstrempty{#2}{\renewcommand{\ACprof}{0}}{\renewcommand{\ACprof}{\fpeval{\LevelValue + \ACTEML}}}
     \ifstrempty{#3}{}{\renewcommand{\ACitem}{#3}}
-}
 
-\newcommand{\ACtotal}{\ifstrempty{\ACcap}{\fpeval{10 + \DEXmod + \ACprof + \ACitem}}
-    {\ifnumcomp{\ACcap}{>}{\DEXmod}
-                    {\fpeval{10 + \DEXmod + \ACprof + \ACitem}}
-                    {\fpeval{10 + \ACcap  + \ACprof + \ACitem}}
+    \ifstrempty{#1}
+        {\renewcommand{\ACtotal}{\fpeval{10 + \DEXmod + \ACprof + \ACitem}}}
+        {\ifnumcomp{#1}{>}{\DEXmod}
+        {\renewcommand{\ACtotal}{\fpeval{10 + \DEXmod + \ACprof + \ACitem}}}
+        {\renewcommand{\ACtotal}{\fpeval{10 + \ACcap  + \ACprof + \ACitem}}
+        }
     }
 }
 
