@@ -126,7 +126,6 @@
 \Languages{common, celestial, abyssal, elvish, dwarvish, giant}
 
 
-
 % % % MELEE STRIKES % % %
 % \MWeapon {Weapon} {T/E/M/L} {item} {Dice} {B/P/S} {WSpec} {Other} {Traits}
 \MWeaponOne{Bonk Stick}{T}{2}{d6}{B}{1}{issued by the horny\\[-2pt] police}{anti-horny}
@@ -159,6 +158,113 @@
 % % %  PAGE 2 % % %
 % % % % % % % % % %
 
+% The Feats on this page follow a simple naming scheme of one letter
+% for the category and a level number or other designation.
+% Feel free to remove any unused (empty) lines.
+
+% !! These are parsed to a tabular. If you want to use the & sign,
+% please use \& to avoid compilation errors !!
+
+% % Ancestry Feats & Abilities % %
+\ASpecial{ASpecial}
+\AHeritage{AHeritage}
+\AOne{A1}
+\AFive{A5}
+\ANine{A9}
+\AThirteen{A13}
+\ASeventeen{A17}
+
+% % Skill Feats % %
+\SBackground{SBackground}
+\STwo{S2}
+\SFour{S4}
+\SSix{S6}
+\SEight{S8}
+\STen{S10}
+\STwelve{S12}
+\SFourteen{S14}
+\SSixteen{S16}
+\SEighteen{S18}
+\STwenty{S20}
+
+% % General Feats % %
+\GThree{G3}
+\GSeven{G7}
+\GEleven{G11}
+\GFifteen{G15}
+\GNineteen{G19}
+
+
+% % Class Feats & Abilities % %
+\COneA{C1A}
+\COneB{C1B}
+\COneC{C1C}
+\CTwo{C2}
+\CThree{C3}
+\CFour{C4}
+\CFive{C5}
+\CSix{C6}
+\CSeven{C7}
+\CEight{C8}
+\CNine{C9}
+\CTen{C10}
+\CEleven{C11}
+\CTwelve{C12}
+\CThirteen{C13}
+\CFourteen{C14}
+\CFifteen{C15}
+\CSixteen{C16}
+\CSeventeen{C17}
+\CEighteen{C18}
+\CNineteen{C19}
+\CTwenty{C20}
+
+% % Bonus Feats % %
+\BFeatA{BonusA}
+\BFeatB{BonusB}
+
+
+% % % INVENTORY % % %
+% % Worn Items % %
+
+% \AddWornItem{Name}{Invest}{Bulk}
+% Invest can be X, ✓ or anything you like, any non-empty input will be counted.
+% Bulk should be L or a number
+\AddWornItem{Very cute Shark}{X}{L}
+\AddWornItem{Totally Swordy Sword}{}{1}
+\AddWornItem{Very cute Shark}{X}{L}
+\AddWornItem{Totally Swordy Sword}{}{1}
+\AddWornItem{Very cute Shark}{X}{L}
+\AddWornItem{Totally Swordy Sword}{}{1}
+\AddWornItem{Very cute Shark}{X}{L}
+\AddWornItem{Totally Swordy Sword}{}{1}
+\AddWornItem{Very cute Shark}{X}{L}
+\AddWornItem{Totally Swordy Sword}{}{1}
+\AddWornItem{Very cute Shark}{X}{L}
+\AddWornItem{Totally Swordy Sword}{}{1}
+\AddWornItem{Very cute Shark}{X}{L}
+\AddWornItem{Totally Swordy Sword}{}{1}
+\AddWornItem{Very cute Shark}{X}{L}
+\AddWornItem{Totally Swordy Sword}{}{1}
+
+% % Readied Items % %
+\AddReadiedItem{Octopus}{3}
+\AddReadiedItem{Candy Bar}{}
+\AddReadiedItem{Octopus}{3}
+\AddReadiedItem{Candy Bar}{}
+
+% % Other Items % %
+\AddOtherItem{Giraffe}{2}
+\AddOtherItem{Amulet of Wow}{L}
+
+% % Money % %
+\CP{8}
+\SP{2}
+\GP{16}
+\PP{3}
+
+
+
 % % % % % % % % % %
 % % %  PAGE 3 % % %
 % % % % % % % % % %
@@ -176,9 +282,9 @@
 % % Do not alter code below this line % %
 % % except to remove entire pages     % %
 \begin{document}
-\renderstatsheet
+% \renderstatsheet
 % \newpage
-% \renderfeatsheet
+\renderfeatsheet
 % \newpage
 % \renderpersonalitysheet
 % \newpage
