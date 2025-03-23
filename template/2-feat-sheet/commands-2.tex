@@ -107,3 +107,70 @@
 
 \newcommand{\BFeatA}[1]{\renewcommand{\BFeatAValue}{#1}}
 \newcommand{\BFeatB}[1]{\renewcommand{\BFeatBValue}{#1}}
+
+
+
+% % %  INVENTORY  % % %
+\FPset\bulk{0}
+
+\newcounter{Invest}
+\setcounter{Invest}{0}
+
+% % Worn Items % %
+\newcommand\WornItemsTable{}
+
+\makeatletter
+\newcommand\WornItemsTableAdd[3]{%
+  \g@addto@macro\WornItemsTable{\footnotesize #1 & \footnotesize #2 & \footnotesize #3 \\ \hline }
+}
+\makeatother
+
+\newcommand{\AddWornItem}[3]{
+    \WornItemsTableAdd{#1}{#2}{#3}
+    \ifblank{#2}{}{\stepcounter{Invest}}
+    \ifstrempty{#3}{}{\ifstrequal{#3}{L}{}{\FPadd\bulk#3\bulk}}
+}
+
+% % Readied Items % %
+\newcommand\ReadiedItemsTable{}
+
+\makeatletter
+\newcommand\ReadiedItemsTableAdd[2]{%
+  \g@addto@macro\ReadiedItemsTable{\footnotesize #1 & \footnotesize #2 \\ \hline }
+}
+\makeatother
+
+\newcommand{\AddReadiedItem}[2]{
+    \ReadiedItemsTableAdd{#1}{#2}
+    \ifstrempty{#2}{}{\ifstrequal{#2}{L}{}{\FPadd\bulk#2\bulk}}
+}
+
+% % Other Items % %
+\newcommand\OtherItemsTable{}
+
+\makeatletter
+\newcommand\OtherItemsTableAdd[2]{%
+  \g@addto@macro\OtherItemsTable{\footnotesize #1 & \footnotesize #2 \\ \hline }
+}
+\makeatother
+
+\newcommand{\AddOtherItem}[2]{
+    \OtherItemsTableAdd{#1}{#2}
+    \ifstrempty{#2}{}{\ifstrequal{#2}{L}{}{\FPadd\bulk#2\bulk}}
+}
+
+
+% % Bulk & Encumberance % %
+\newcommand{\Encumbered}{\fpeval{5 + \STRmod}}
+\newcommand{\Maximum}{\fpeval{10 + \STRmod}}
+
+% % Money % %
+\newcommand{\CPValue}{}
+\newcommand{\SPValue}{}
+\newcommand{\GPValue}{}
+\newcommand{\PPValue}{}
+
+\newcommand{\CP}[1]{\renewcommand{\CPValue}{#1}}
+\newcommand{\SP}[1]{\renewcommand{\SPValue}{#1}}
+\newcommand{\GP}[1]{\renewcommand{\GPValue}{#1}}
+\newcommand{\PP}[1]{\renewcommand{\PPValue}{#1}}
