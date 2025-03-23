@@ -1,5 +1,7 @@
 # Pathfinder 2e LaTeX Character Sheet Template
-LaTeX template for typesetting Cyberpunk Character Sheets
+LaTeX template for typesetting Pathfinder 2e Character Sheets
+
+## IMPORTANT: This is a work in progress. So far, only the first page ist supported.
 
 ## Features
 - 4-page Character Sheet
