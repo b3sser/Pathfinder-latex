@@ -1,0 +1,14 @@
+\begin{pspicture}(\paperwidth,\paperheight)
+
+    % Set background
+    \begin{tikzpicture}[remember picture,overlay]
+        \node[inner sep=0pt] at (current page.center)
+        {\includegraphics[page=3,width=\paperwidth,height=\paperheight]{\bgcolbw}};
+    \end{tikzpicture}
+
+    % Import parts of sheet
+    \input{template/3-person-actions-sheet/3-person.tex}
+    \input{template/3-person-actions-sheet/3-campaign.tex}
+    \input{template/3-person-actions-sheet/3-actions.tex}
+
+\end{pspicture}
