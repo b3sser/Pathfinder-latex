@@ -13,7 +13,7 @@ LaTeX template for typesetting Pathfinder 2e Character Sheets
 #### TL;DR
 1. Copy ```empty.tex```
 2. Fill commands with your values and text
-3. Compile with XeLaTeX
+3. Compile with XeLaTeX or LuaLaTeX
 
 Look at ```example-character.tex``` for guidance
 
@@ -28,11 +28,11 @@ Look at ```example-character.tex``` for guidance
 - If you need to overwrite the auto-calculated values, you can often do so, by using ```\renewcommand``` *after* the command it is associated with. *E.g. using ```\renewcommand{\ACtotal}{20}``` after the ```\AC{}{}{}``` command.* You can find out, what the values are called by checking the respective ```commands.tex``` for the page. If you have trouble with this, feel free to contact me for advice and custom solutions any time.
 
 ## Compilation & Dependencies
-This Template is designed to be compiled with **XeLaTeX**. XeTeX may also work but is not explicitely tested.
+This Template is designed to be compiled with **XeLaTeX** or **LuaLaTeX**. Others may also work but are not explicitely tested.
 
-*Personally, I opened the folder in VSCodium with LaTeX Workshop Extension and ran ```Recipe: latexmk (xelatex)```*
+*Personally, I opened the folder in VSCodium with LaTeX Workshop Extension and ran ```Recipe: latexmk (xelatex)``` or ```Recipe: latexmk (lualatex)``` (the latter worked as a good workaround when my machine had issues with xdvipdfmx, try lualatex if you have similar issues with xelatex).*
 
-If you are encountering issues, please make sure you have ```xetex-pstricks``` installed.
+If you are encountering issues, please make sure you have ```xetex-pstricks``` or an equivalent pstricks-package for your compiler installed.
 
 ## Credits
 This package was created based on the standard Paizo Inc. PDF character sheet template and uses it as background image. Pathfinder, and the Pathfinder logo are registered trademarks of Paizo Inc.
